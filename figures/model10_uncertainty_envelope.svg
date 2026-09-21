@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="500" viewBox="0 0 940 500">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#111}.grid{stroke:#ddd}</style>
+<text x="470" y="30" text-anchor="middle" font-size="22">Evidence-envelope distribution of required post-contact mixing</text>
+<line class="grid" x1="152.9" y1="70" x2="152.9" y2="370"/>
+<text x="152.9" y="394" text-anchor="middle" font-size="12">0.75%</text>
+<line class="grid" x1="241.0" y1="70" x2="241.0" y2="370"/>
+<text x="241.0" y="394" text-anchor="middle" font-size="12">1%</text>
+<line class="grid" x1="329.0" y1="70" x2="329.0" y2="370"/>
+<text x="329.0" y="394" text-anchor="middle" font-size="12">1.25%</text>
+<line class="grid" x1="417.1" y1="70" x2="417.1" y2="370"/>
+<text x="417.1" y="394" text-anchor="middle" font-size="12">1.5%</text>
+<line class="grid" x1="505.2" y1="70" x2="505.2" y2="370"/>
+<text x="505.2" y="394" text-anchor="middle" font-size="12">1.75%</text>
+<line class="grid" x1="593.3" y1="70" x2="593.3" y2="370"/>
+<text x="593.3" y="394" text-anchor="middle" font-size="12">2%</text>
+<line class="grid" x1="681.4" y1="70" x2="681.4" y2="370"/>
+<text x="681.4" y="394" text-anchor="middle" font-size="12">2.25%</text>
+<line class="grid" x1="769.5" y1="70" x2="769.5" y2="370"/>
+<text x="769.5" y="394" text-anchor="middle" font-size="12">2.5%</text>
+<rect x="100.0" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="117.6" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="135.2" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="152.9" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="170.5" y="171.9" width="17.1" height="18.1" fill="#1f77b4" opacity="0.75"/>
+<rect x="188.1" y="171.8" width="17.1" height="18.2" fill="#1f77b4" opacity="0.75"/>
+<rect x="205.7" y="153.5" width="17.1" height="36.5" fill="#1f77b4" opacity="0.75"/>
+<rect x="223.3" y="180.4" width="17.1" height="9.6" fill="#1f77b4" opacity="0.75"/>
+<rect x="241.0" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="258.6" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="276.2" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="293.8" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="311.4" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="329.0" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="346.7" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="364.3" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="381.9" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="399.5" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="417.1" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="434.8" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="452.4" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="470.0" y="130.7" width="17.1" height="59.3" fill="#1f77b4" opacity="0.75"/>
+<rect x="487.6" y="160.0" width="17.1" height="30.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="505.2" y="160.4" width="17.1" height="29.6" fill="#1f77b4" opacity="0.75"/>
+<rect x="522.9" y="131.0" width="17.1" height="59.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="540.5" y="100.0" width="17.1" height="90.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="558.1" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="575.7" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="593.3" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="611.0" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="628.6" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="646.2" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="663.8" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="681.4" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="699.0" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="716.7" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="734.3" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="751.9" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="769.5" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="787.1" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="804.8" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<rect x="822.4" y="190.0" width="17.1" height="0.0" fill="#1f77b4" opacity="0.75"/>
+<text x="100" y="90" font-size="13" font-weight="bold">50% fixation threshold</text>
+<rect x="100.0" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="117.6" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="135.2" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="152.9" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="170.5" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="188.1" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="205.7" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="223.3" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="241.0" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="258.6" y="320.8" width="17.1" height="9.2" fill="#ff7f0e" opacity="0.75"/>
+<rect x="276.2" y="302.9" width="17.1" height="27.1" fill="#ff7f0e" opacity="0.75"/>
+<rect x="293.8" y="293.5" width="17.1" height="36.5" fill="#ff7f0e" opacity="0.75"/>
+<rect x="311.4" y="320.4" width="17.1" height="9.6" fill="#ff7f0e" opacity="0.75"/>
+<rect x="329.0" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="346.7" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="364.3" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="381.9" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="399.5" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="417.1" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="434.8" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="452.4" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="470.0" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="487.6" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="505.2" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="522.9" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="540.5" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="558.1" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="575.7" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="593.3" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="611.0" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="628.6" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="646.2" y="270.7" width="17.1" height="59.3" fill="#ff7f0e" opacity="0.75"/>
+<rect x="663.8" y="300.0" width="17.1" height="30.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="681.4" y="300.4" width="17.1" height="29.6" fill="#ff7f0e" opacity="0.75"/>
+<rect x="699.0" y="271.0" width="17.1" height="59.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="716.7" y="240.0" width="17.1" height="90.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="734.3" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="751.9" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="769.5" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="787.1" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="804.8" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<rect x="822.4" y="330.0" width="17.1" height="0.0" fill="#ff7f0e" opacity="0.75"/>
+<text x="100" y="230" font-size="13" font-weight="bold">95% fixation threshold</text>
+<text x="100" y="428" font-size="12">50% threshold: 5th/median/95th = 0.85% / 1.79% / 1.90%</text>
+<text x="100" y="448" font-size="12">95% threshold: 5th/median/95th = 1.10% / 2.29% / 2.40%</text>
+<text x="470" y="486" text-anchor="middle" font-size="11">Uniform sampling inside published intervals and equal weighting of population-model outputs are propagation conventions, not paper-supplied posteriors.</text>
+</svg>
