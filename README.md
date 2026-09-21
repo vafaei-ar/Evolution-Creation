@@ -18,9 +18,9 @@ It assumes fixed population size, non-overlapping generations, two parents per c
 
 Under the infinite-population deterministic approximation:
 
-[
+$$
 f_{t+1}=1-(1-f_t)^2.
-]
+$$
 
 The stochastic simulation samples parents explicitly, so rare founder lineages can disappear by chance.
 
@@ -28,7 +28,7 @@ The stochastic simulation samples parents explicitly, so rare founder lineages c
 
 Model 02 removes the strongest unrealistic assumption from Model 01: complete mixing.
 
-The population is divided into demes. For a child born in deme (i), the migration matrix entry (M_{ij}) is the probability that a parent is sampled from source deme (j). This is an abstraction of parental-source mixing or gene flow.
+The population is divided into demes. For a child born in deme $i$, the migration matrix entry $M_{ij}$ is the probability that a parent is sampled from source deme $j$. This is an abstraction of parental-source mixing or gene flow.
 
 [![Open Model 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/02_structured_migration.ipynb)
 
