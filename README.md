@@ -8,53 +8,47 @@ The project does **not** assume that a theological or historical claim is true. 
 
 ## Model 01: spread of a genealogical founder
 
-The baseline asks:
-
-> If one individual enters a finite, completely mixed population and reproduces within it, how does that individual's genealogical ancestry spread through later generations?
-
-It assumes fixed population size, non-overlapping generations, two parents per child, random mating, no geography, no migration, no selection, and no genetics.
+The baseline asks what happens when one founder enters a finite, completely mixed population.
 
 [![Open Model 01 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/01_founder_spread.ipynb)
 
-Under the infinite-population deterministic approximation:
-
-$$
-f_{t+1}=1-(1-f_t)^2.
-$$
-
-The stochastic simulation samples parents explicitly, so rare founder lineages can disappear by chance.
-
 ## Model 02: structured populations and migration
 
-Model 02 removes the strongest unrealistic assumption from Model 01: complete mixing.
-
-The population is divided into demes. For a child born in deme $i$, the migration matrix entry $M_{ij}$ is the probability that a parent is sampled from source deme $j$. This is an abstraction of parental-source mixing or gene flow.
+Model 02 divides the population into demes and represents parental-source mixing with a migration matrix.
 
 [![Open Model 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/02_structured_migration.ipynb)
 
-### Example trajectory
-
-The figure below uses five equal demes in a line, one founder population at the left edge, and a total nearest-neighbor migration rate of 0.02 per parental draw.
-
 ![Founder ancestry across connected demes](figures/model02_deme_spread.svg)
-
-The parameter values above are illustrative. They are **not** estimates of ancient human migration.
-
-### Sensitivity to migration and elapsed time
-
-The next figure estimates the probability that founder ancestry has fixed in all four demes by the stated generation. It uses 30 stochastic replicates per cell.
 
 ![Migration sensitivity heatmap](figures/model02_fixation_heatmap.svg)
 
-At migration rate zero, the founder lineage cannot cross between demes. With nonzero connectivity, elapsed time and migration rate jointly control whether the lineage spreads through the entire system.
-
-### Animated ancestry front
-
-The generated SVG below animates one stochastic run across seven demes.
-
 ![Animated ancestry spread](figures/model02_spread_animation.svg)
 
-Model 02 also has a hard-barrier control. A permanent barrier makes the migration matrix block-disconnected. If the founder starts on one side, ancestry cannot reach the other side regardless of how many generations pass.
+## Model 03: time-varying connectivity
+
+Model 03 allows barriers to appear or disappear over time.
+
+[![Open Model 03 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/03_time_varying_connectivity.ipynb)
+
+A population isolated from the start is different from a population that becomes isolated only after founder ancestry has crossed.
+
+### Barrier closure timing
+
+![Barrier closure timing](figures/model03_closure_timing.svg)
+
+These are illustrative Monte Carlo estimates, not historical migration estimates.
+
+### Same barrier, different histories
+
+The barrier is between Deme 3 and Deme 4.
+
+![Time-varying barrier scenarios](figures/model03_scenario_heatmap.svg)
+
+### Animation: isolation after ancestry crosses
+
+In this run, the barrier closes at generation 20. Founder ancestry has already entered Deme 4, so later isolation does not erase that prior genealogical connection.
+
+![Time-varying barrier animation](figures/model03_barrier_animation.svg)
 
 ## Repository structure
 
@@ -74,13 +68,14 @@ python -m pip install -e ".[dev]"
 pytest
 python scripts/generate_figures.py
 python scripts/generate_model02_outputs.py
+python scripts/generate_model03_outputs.py
 ~~~
 
 ## Modeling roadmap
 
 1. Founder ancestry in a single panmictic population: implemented
 2. Multiple demes, migration, and fixed barriers: implemented
-3. Time-varying barriers and historically changing connectivity
+3. Time-varying barriers and historically changing connectivity: implemented
 4. Time-varying population size and carrying capacity
 5. Endogamy and assortative mating
 6. Genealogical MRCA and identical-ancestors behavior
@@ -89,8 +84,6 @@ python scripts/generate_model02_outputs.py
 
 ## Interpretation rule
 
-Every model should separate:
-
-**Assumptions → mechanism → output → interpretation → what the model does not establish**
+Every model should separate assumptions, mechanism, output, interpretation, and what the model does not establish.
 
 A simulation can demonstrate compatibility under assumptions. It cannot by itself establish that a historical or theological event occurred.
