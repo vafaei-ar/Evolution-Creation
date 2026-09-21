@@ -6,6 +6,7 @@ from evolution_creation.coalescence import (
     make_parent_source_matrix,
     simulate_coalescence_replicates,
     simulate_pedigree_coalescence,
+    simulate_structured_coalescence_replicates,
     simulate_structured_pedigree_coalescence,
 )
 
@@ -138,3 +139,20 @@ def test_invalid_isolation_strength(strength):
             [50, 50],
             strength,
         )
+
+
+def test_structured_replicate_summary_shape():
+    sizes = [20, 20, 20]
+    summary = simulate_structured_coalescence_replicates(
+        community_sizes=sizes,
+        parent_source_matrix=make_parent_source_matrix(
+            sizes,
+            0.8,
+        ),
+        max_generations=40,
+        replicates=5,
+        seed=10,
+    )
+    assert summary.population_size == 60
+    assert summary.mrca_generations.shape == (5,)
+    assert summary.iap_generations.shape == (5,)
