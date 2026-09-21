@@ -614,6 +614,40 @@ Those are required-rate thresholds under deliberately favorable assumptions, **n
 
 **What would satisfy or strongly disfavor the claim:** obtain a defensible demographic estimate of post-contact reproductive mixing. Rates consistently above the required threshold would make late genealogical fixation compatible with the model; rates substantially below it would make that route unlikely under the stated assumptions. Alternatively, evidence of an earlier reproductive bridge would change the chronology. Without one of those additions, assigning a numerical historical probability would be false precision.
 
+## Model 11: empirical admixture versus genealogical spread
+
+### Claim from the debate
+
+Low or absent detectable European genetic admixture in an Indigenous population was raised as an objection to outside genealogical ancestry. The counterclaim is that **genetic ancestry and genealogical ancestry are not the same quantity**: a source lineage can spread through pedigrees even while its mean DNA contribution remains small.
+
+[![Open Model 11 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/11_admixture_genealogy.ipynb)
+
+### Result
+
+Model 11 explicitly separates expected source-DNA proportion from genealogical descendant status.
+
+For a single **1% genetic-admixture pulse**, followed by neutral random mating and no later source input, the expected population mean source-DNA fraction remains about 1%. Genealogical descent spreads because a child is a descendant if either parent is.
+
+![Admixture versus genealogy](figures/model11_admixture_vs_genealogy.svg)
+
+By generation 10, the deterministic genealogical descendant fraction exceeds **99.99%**. In a population of 1,000, the simple independent-final-state approximation gives a high probability of complete genealogical coverage; the Colab also provides finite-population Monte Carlo simulation because real pedigree states are correlated.
+
+Published genomic work shows that admixture pulses and tract-length histories can often be dated on the scale of several to dozens of generations. For example, South American post-colonial admixture has been modeled at roughly 9-14 generations in one genome-wide study, and ancient Rapanui genomes carry about 10% Native American ancestry from a pre-European-contact event dated to approximately 1250-1430 CE.
+
+### Judgment on the claim
+
+**The inference "small genetic admixture means few genealogical descendants" is rejected.** Small mean genetic ancestry can coexist with nearly universal genealogical descent after enough intermarriage.
+
+But the stronger reverse claim is also unsupported: **absence of detectable aggregate admixture does not itself prove that a particular outside genealogical ancestor existed.** Historical ancestry still requires a reproductive path and a defensible demographic history.
+
+**What must be corrected to use the claim scientifically:** infer an admixture history rather than equating a present DNA percentage with a per-generation mating rate; distinguish individual genealogy from population mean DNA ancestry; and do not transfer an admixture estimate from one Indigenous population to another.
+
+Primary references:
+
+- *Genomic Insights into the Ancestry and Demographic History of South America* (PLOS Genetics, 2015), DOI 10.1371/journal.pgen.1005602.
+- *Ancient Rapanui genomes reveal resilience and pre-European contact with the Americas* (Nature, 2024), DOI 10.1038/s41586-024-07881-4.
+- Rasmussen et al. (2011), *An Aboriginal Australian genome reveals separate human dispersals into Asia*, Science, DOI 10.1126/science.1211177.
+
 ## Repository structure
 
 ~~~text
@@ -640,6 +674,7 @@ python scripts/generate_model07_outputs.py
 python scripts/generate_model08_outputs.py
 python scripts/generate_model09_outputs.py
 python scripts/generate_model10_outputs.py
+python scripts/generate_model11_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -654,7 +689,11 @@ python scripts/generate_model10_outputs.py
 8. Population-scale pedigree + chromosome integration: implemented
 9. Historically constrained migration, isolation, endogamy, demography, and founder scenarios: implemented
 10. Evidence-calibrated chronology, population uncertainty, and required mixing thresholds: implemented
-11. Local ancient-genome/admixture calibration where defensible
+11. Genetic admixture versus genealogical spread: implemented
+12. Domestication timing versus biological species appearance
+13. Population-genetic detectability of a specially inserted pair
+14. Agency inference: artifacts versus fine-tuning
+15. Evolution of cooperation, punishment, conformity, and moral behavior
 
 ## Interpretation rule
 
