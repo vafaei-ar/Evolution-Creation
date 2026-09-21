@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="385" viewBox="0 0 900 385">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#111}.base{fill:#e6e6e6}.founder{fill:#ff7f0e}</style>
+<text x="450" y="30" text-anchor="middle" font-size="22">One genealogical path: founder-derived autosomal segments are broken up and lost</text>
+<text x="450" y="52" text-anchor="middle" font-size="12">Eight representative autosomes from the 22-autosome, 33-Morgan model; seed = 20260922</text>
+<text x="143" y="90" text-anchor="end" font-size="11">chr 1</text>
+<rect class="base" x="155" y="80" width="650" height="12" rx="4"/>
+<text x="143" y="119" text-anchor="end" font-size="11">chr 4</text>
+<rect class="base" x="155" y="109" width="650" height="12" rx="4"/>
+<text x="143" y="148" text-anchor="end" font-size="11">chr 7</text>
+<rect class="base" x="155" y="138" width="650" height="12" rx="4"/>
+<text x="143" y="177" text-anchor="end" font-size="11">chr 10</text>
+<rect class="base" x="155" y="167" width="650" height="12" rx="4"/>
+<text x="143" y="206" text-anchor="end" font-size="11">chr 13</text>
+<rect class="base" x="155" y="196" width="650" height="12" rx="4"/>
+<text x="143" y="235" text-anchor="end" font-size="11">chr 16</text>
+<rect class="base" x="155" y="225" width="650" height="12" rx="4"/>
+<text x="143" y="264" text-anchor="end" font-size="11">chr 19</text>
+<rect class="base" x="155" y="254" width="650" height="12" rx="4"/>
+<text x="143" y="293" text-anchor="end" font-size="11">chr 22</text>
+<rect class="base" x="155" y="283" width="650" height="12" rx="4"/>
+<g opacity="0">
+<animate attributeName="opacity" values="1;0;0;0;0;0;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 1</text>
+<rect class="founder" x="155.00" y="80" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="109" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="138" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="167" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="196" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="225" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="254" width="650.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="283" width="650.00" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;1;0;0;0;0;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 2</text>
+<rect class="founder" x="155.00" y="80" width="406.70" height="12" rx="3"/>
+<rect class="founder" x="632.68" y="80" width="85.38" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="109" width="281.54" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="167" width="147.28" height="12" rx="3"/>
+<rect class="founder" x="622.02" y="167" width="182.98" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="196" width="371.44" height="12" rx="3"/>
+<rect class="founder" x="408.28" y="225" width="396.72" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="254" width="194.91" height="12" rx="3"/>
+<rect class="founder" x="389.00" y="254" width="416.00" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="283" width="29.70" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;1;0;0;0;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 3</text>
+<rect class="founder" x="155.00" y="80" width="127.76" height="12" rx="3"/>
+<rect class="founder" x="158.05" y="167" width="118.71" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="196" width="371.44" height="12" rx="3"/>
+<rect class="founder" x="408.28" y="225" width="26.45" height="12" rx="3"/>
+<rect class="founder" x="731.06" y="225" width="60.62" height="12" rx="3"/>
+<rect class="founder" x="259.65" y="254" width="90.25" height="12" rx="3"/>
+<rect class="founder" x="389.00" y="254" width="400.83" height="12" rx="3"/>
+<rect class="founder" x="789.90" y="254" width="15.10" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="283" width="29.70" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;1;0;0;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 4</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+<rect class="founder" x="158.05" y="167" width="118.71" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="196" width="161.76" height="12" rx="3"/>
+<rect class="founder" x="408.28" y="225" width="26.45" height="12" rx="3"/>
+<rect class="founder" x="731.06" y="225" width="60.62" height="12" rx="3"/>
+<rect class="founder" x="578.42" y="254" width="136.23" height="12" rx="3"/>
+<rect class="founder" x="155.00" y="283" width="29.70" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;1;0;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 5</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+<rect class="founder" x="158.05" y="167" width="118.71" height="12" rx="3"/>
+<rect class="founder" x="198.65" y="196" width="118.11" height="12" rx="3"/>
+<rect class="founder" x="408.28" y="225" width="26.45" height="12" rx="3"/>
+<rect class="founder" x="758.66" y="225" width="19.49" height="12" rx="3"/>
+<rect class="founder" x="578.42" y="254" width="136.23" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;1;0;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 6</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+<rect class="founder" x="198.65" y="196" width="118.11" height="12" rx="3"/>
+<rect class="founder" x="408.28" y="225" width="26.45" height="12" rx="3"/>
+<rect class="founder" x="758.66" y="225" width="19.49" height="12" rx="3"/>
+<rect class="founder" x="578.42" y="254" width="136.23" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;1;0;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 7</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;1;0;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 8</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;0;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 9</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;0;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 10</text>
+<rect class="founder" x="183.27" y="80" width="99.49" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;0;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 11</text>
+<rect class="founder" x="183.27" y="80" width="27.92" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;1;0" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 12</text>
+<rect class="founder" x="183.27" y="80" width="27.92" height="12" rx="3"/>
+</g>
+<g opacity="0">
+<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;1" dur="13s" repeatCount="indefinite" calcMode="discrete"/>
+<text x="450" y="329" text-anchor="middle" font-size="16">Generation 13</text>
+</g>
+<text x="450" y="357" text-anchor="middle" font-size="11">Orange = DNA inherited from the focal genealogical ancestor along this one path.</text>
+<text x="450" y="374" text-anchor="middle" font-size="11">Only selected autosomes are displayed; the full 22-autosome state is used in the simulation.</text>
+</svg>

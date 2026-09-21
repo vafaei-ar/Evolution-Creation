@@ -208,6 +208,68 @@ Primary references:
 - Joseph T. Chang (1999), Recent common ancestors of all present-day individuals, Advances in Applied Probability 31(4), 1002-1026. https://doi.org/10.1239/aap/1029955256
 - Douglas L. T. Rohde, Steve Olson, and Joseph T. Chang (2004), Modelling the recent common ancestry of all living humans, Nature 431, 562-566. https://doi.org/10.1038/nature02842
 
+## Model 07: genealogical ancestry versus autosomal genetic ancestry
+
+Model 07 adds chromosomes and recombination to the genealogical story.
+
+A person can be a genuine genealogical ancestor of a descendant while contributing **zero autosomal DNA** to that descendant. The distinction becomes increasingly important as the number of generations grows.
+
+[![Open Model 07 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/07_genetic_ancestry.ipynb)
+
+### Published single-ancestor benchmark
+
+Using the human approximation described by Agranat-Tamir, Mooney, and Rosenberg (2024), following Coop (2013), the mean number of surviving autosomal fragments from one specified genealogical ancestor k generations back is
+
+```math
+\lambda_k=\frac{22+33(k-1)}{2^{k-1}}
+```
+
+for k >= 2. Approximating fragment count as Poisson gives
+
+```math
+p_k=1-e^{-\lambda_k},
+```
+
+the probability that the genealogical ancestor is also an autosomal genetic ancestor along that path.
+
+The published examples are p_8 = 0.8615 and p_16 = 0.0157.
+
+![Genetic ancestry probability](figures/model07_genetic_probability.svg)
+
+The green curve uses a 6 cM illustrative threshold. It asks a stricter question than whether **any** DNA survives. The repository does not treat 6 cM as a universal consumer-DNA detection cutoff.
+
+### Genealogical slots versus genetic ancestors
+
+Ignoring pedigree collapse, the number of genealogical pedigree slots grows as 2^k. The expected number that contribute autosomal DNA is 2^k p_k.
+
+![Genealogical versus genetic ancestor counts](figures/model07_ancestor_counts.svg)
+
+This is why dividing an assumed number of genes by 2^k is the wrong inheritance model. Genes are linked on chromosomes; meiosis transmits recombinant chromosome segments rather than independently sampling genes.
+
+### Animated segment loss
+
+The explicit segment simulator uses 22 autosomes and a transparent 33-Morgan aggregate map. The animation displays eight representative autosomes from one stochastic path.
+
+![Founder segment erosion](figures/model07_segment_animation.svg)
+
+Orange intervals are founder-derived segments. Recombination breaks them into smaller pieces, and stochastic transmission can eventually remove them completely.
+
+### Important single-path limitation
+
+The probability curve above follows **one specified genealogical path** from ancestor to descendant.
+
+A distant real ancestor can appear in a pedigree through multiple paths because of pedigree collapse. Multiple paths can increase the chance that some DNA survives, and those paths are not generally independent. Therefore the single-path curve should not be used by itself to infer the genetic contribution of a proposed ancient universal genealogical ancestor.
+
+That requires combining the Model 06 population pedigree with chromosome transmission across the full pedigree.
+
+Real recombination also varies by genomic location, sex, population, and individual. Model 07 deliberately uses a transparent aggregate recombination model rather than claiming high-resolution historical realism.
+
+Primary references:
+
+- L. Agranat-Tamir, J. A. Mooney, and N. A. Rosenberg (2024), Counting the genetic ancestors from source populations in members of an admixed population, Genetics 226(4), iyae011. https://doi.org/10.1093/genetics/iyae011
+- S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
+- A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
+
 ## Repository structure
 
 ~~~text
@@ -230,6 +292,7 @@ python scripts/generate_model03_outputs.py
 python scripts/generate_model04_outputs.py
 python scripts/generate_model05_outputs.py
 python scripts/generate_model06_outputs.py
+python scripts/generate_model07_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -240,8 +303,8 @@ python scripts/generate_model06_outputs.py
 4. Time-varying population size, carrying capacity, bottlenecks, and overlapping ancestry: implemented
 5. Endogamy and assortative mating: implemented
 6. Genealogical MRCA and identical-ancestors behavior: implemented
-7. Chromosomes, recombination, and loss of detectable founder DNA
-8. Historically constrained scenarios
+7. Chromosomes, recombination, and loss of detectable founder DNA: implemented
+8. Population-scale pedigree + chromosome integration and historically constrained scenarios
 
 ## Interpretation rule
 
