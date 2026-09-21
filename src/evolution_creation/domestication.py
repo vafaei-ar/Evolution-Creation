@@ -29,8 +29,8 @@ EVIDENCE = (
         "aurochs lineage long predates Near Eastern cattle domestication",
     ),
     LivestockEvidence(
-        "dromedary camel", 3.0, 4.5, 7.2, "wild dromedary populations",
-        "domestication is late; Neolithic wild dromedaries predate it",
+        "dromedary camel", 3.0, 4.5, 11.7, "wild dromedary populations",
+        "wild dromedary lineage extends into the Pleistocene; domestication is much later",
     ),
 )
 
