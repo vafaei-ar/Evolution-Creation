@@ -8,6 +8,7 @@ from evolution_creation.historical_constraints import (
     earliest_reachable_generations,
     make_debate_historical_scenario,
     simulate_historical_genealogy,
+    simulate_historical_pedigree_genome,
     simulate_late_contact_sensitivity,
     years_to_generations,
 )
@@ -259,4 +260,82 @@ def test_bottleneck_changes_only_requested_region_and_window():
             tasmania,
         ]
         == 20
+    )
+
+
+
+def test_structured_pedigree_genome_keeps_genetics_inside_genealogy():
+    scenario = make_debate_historical_scenario(
+        founder_age_years=100,
+        region_sizes=(
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+        ),
+        tasmania_isolation_age_years=12_000,
+        tasmania_late_contact_rate=0.0,
+        founder_pair_joint_children=2,
+    )
+    result = simulate_historical_pedigree_genome(
+        scenario,
+        max_generations=4,
+        chromosome_lengths_morgans=[
+            0.3,
+            0.4,
+        ],
+        detectable_threshold_cm=5.0,
+        seed=9,
+    )
+    assert np.all(
+        result.genetic_carrier_fraction_by_region
+        <= (
+            result.any_founder_fraction_by_region
+            + 1e-12
+        )
+    )
+
+
+def test_structured_pedigree_genome_respects_hard_tasmania_barrier():
+    scenario = make_debate_historical_scenario(
+        founder_age_years=100,
+        region_sizes=(
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+        ),
+        tasmania_isolation_age_years=12_000,
+        tasmania_late_contact_rate=0.0,
+        founder_pair_joint_children=2,
+    )
+    result = simulate_historical_pedigree_genome(
+        scenario,
+        max_generations=4,
+        chromosome_lengths_morgans=[
+            0.3,
+            0.4,
+        ],
+        seed=10,
+    )
+    tasmania = scenario.region_names.index(
+        "Tasmania"
+    )
+    assert np.all(
+        result.any_founder_fraction_by_region[
+            :,
+            tasmania,
+        ]
+        == 0.0
+    )
+    assert np.all(
+        result.genetic_carrier_fraction_by_region[
+            :,
+            tasmania,
+        ]
+        == 0.0
     )
