@@ -749,6 +749,52 @@ Primary references:
 - Lubinski, Terry & McCutcheon (2014), *Comparative methods for distinguishing flakes from geofacts*, Journal of Archaeological Science 52:308-320.
 - Stanford Encyclopedia of Philosophy, *Fine-Tuning*, substantive revision 2026.
 
+## Model 15: evolution of cooperation, punishment, conformity, and moral norms
+
+### Claims from the debate
+
+The morality discussion contains two separable claims.
+
+One is descriptive: cooperation, punishment, sensitivity to group norms, and flexible conformity can be shaped by evolutionary and cultural pressures. The debate even proposes a broad distribution in which many people adapt their behavior to the prevailing social norm.
+
+The second is a philosophical objection: **group acceptance cannot define moral truth**, because conformity can sometimes require participation in behavior we independently judge immoral.
+
+### Result
+
+Model 15 combines a simple payoff pressure with conformist cultural transmission.
+
+Cooperation is costly. Defectors can face punishment proportional to the cooperative/punishing fraction. Conformity adds a frequency-dependent advantage to whichever behavior is already common.
+
+![Cooperation and conformity dynamics](figures/model15_norm_dynamics.svg)
+
+The model reproduces three well-established qualitative results:
+
+- costly cooperation can decline when no supporting mechanism exists;
+- sufficiently strong punishment can stabilize high cooperation;
+- conformity creates positive frequency dependence, pushing majority behaviors toward greater prevalence.
+
+The last result is morally content-neutral. If the majority behavior is cooperative, conformity can stabilize cooperation. If the majority behavior is cruel, discriminatory, dishonest, or otherwise harmful, the same conformity mechanism can stabilize that norm.
+
+Experimental work by Fehr and Gächter found that cooperation flourished when costly punishment was available and deteriorated when punishment was excluded. Nowak reviews multiple mechanisms by which cooperation can evolve. Boyd and colleagues showed theoretically that even weak conformist transmission can stabilize costly norm enforcement under specified cultural-evolutionary conditions.
+
+### Judgment on the claims
+
+**The descriptive evolutionary claim is supported in a qualified sense.** Evolutionary and cultural mechanisms can explain the emergence and maintenance of cooperation, norm following, punishment, and conditional adaptation to group behavior.
+
+The model does **not** support a literal universal claim that a particular fixed percentage such as "90%" of humans belongs to one conformist psychological category. That number requires an operational definition and empirical population data.
+
+**The reduction of morality to conformity or reproductive success is not supported.** Model 15 directly demonstrates the problem: conformity is blind to moral content. It can stabilize a good norm or a bad norm with identical mathematics.
+
+Thus an evolutionary explanation of moral psychology does not logically establish objective moral truth, and it does not disprove objective moral truth either. It explains behavior and norm transmission, not the validity of an "ought."
+
+**What would be required for the stronger normative claim:** an additional metaethical or normative premise connecting facts about fitness, welfare, rationality, flourishing, rights, divine command, or some other criterion to moral truth. Population dynamics alone cannot supply that bridge.
+
+Primary references:
+
+- Nowak (2006), *Five rules for the evolution of cooperation*, Science 314:1560-1563.
+- Fehr & Gächter (2002), *Altruistic punishment in humans*, Nature 415:137-140.
+- Boyd, Gintis, Bowles & Richerson (2001), *Why people punish defectors. Weak conformist transmission can stabilize costly enforcement of norms in cooperative dilemmas*, Journal of Theoretical Biology 208:89-109.
+
 ## Repository structure
 
 ~~~text
@@ -779,6 +825,7 @@ python scripts/generate_model11_outputs.py
 python scripts/generate_model12_outputs.py
 python scripts/generate_model13_outputs.py
 python scripts/generate_model14_outputs.py
+python scripts/generate_model15_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -797,7 +844,13 @@ python scripts/generate_model14_outputs.py
 12. Domestication timing versus biological species appearance: implemented
 13. Population-genetic detectability of a specially inserted pair: implemented
 14. Agency inference: artifacts versus fine-tuning: implemented
-15. Evolution of cooperation, punishment, conformity, and moral behavior
+15. Evolution of cooperation, punishment, conformity, and moral behavior: implemented
+
+## Computational modeling endpoint
+
+Models 01-15 now cover the main claims from this debate that can be meaningfully formalized without pretending that philosophical or theological propositions are themselves numerical parameters.
+
+Further work should primarily **refine evidence and assumptions** rather than add more toy models: better archaeological chronology, population-specific admixture/demographic estimates, richer genomic simulations, and explicit philosophical premises where the question is normative rather than empirical.
 
 ## Interpretation rule
 
