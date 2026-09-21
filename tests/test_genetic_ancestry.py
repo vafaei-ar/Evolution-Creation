@@ -106,3 +106,25 @@ def test_invalid_generation(generation):
         coop_fragment_mean(
             generation
         )
+
+
+
+def test_segment_history_starts_with_full_chromosomes():
+    from evolution_creation.genetic_ancestry import (
+        simulate_segment_history,
+    )
+
+    history = simulate_segment_history(
+        max_generations=3,
+        seed=12,
+    )
+    assert len(
+        history.segments_by_generation[0]
+    ) == 22
+    for chromosome, length in zip(
+        history.segments_by_generation[0],
+        history.chromosome_lengths_morgans,
+    ):
+        assert chromosome == (
+            (0.0, float(length)),
+        )
