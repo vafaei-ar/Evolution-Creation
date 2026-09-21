@@ -648,6 +648,38 @@ Primary references:
 - *Ancient Rapanui genomes reveal resilience and pre-European contact with the Americas* (Nature, 2024), DOI 10.1038/s41586-024-07881-4.
 - Rasmussen et al. (2011), *An Aboriginal Australian genome reveals separate human dispersals into Asia*, Science, DOI 10.1126/science.1211177.
 
+## Model 12: domestication versus biological appearance
+
+### Claim from the debate
+
+The debate connects the Qur'anic **"eight pairs"** of livestock with the proposed Adam period and treats the roughly Neolithic timing of several domestic animals as potentially supportive of a special-creation scenario.
+
+### Result
+
+Model 12 separates **domestication/management** from **biological lineage origin**.
+
+![Livestock domestication timeline](figures/model12_domestication_timeline.svg)
+
+Using broad evidence intervals, sheep, goats, and taurine cattle have early-Neolithic domestication transitions around 9.5-11 ka. Dromedary camel domestication is substantially later, roughly in the second millennium BCE.
+
+Under the model's simple uniform-within-evidence-interval calculation, the probability that **all four livestock domestication dates** fall inside a 9-12 ka window is **0%**, because the dromedary interval does not overlap that window. This is an interval-consistency calculation, not a posterior probability of creation.
+
+More importantly, ancient DNA and zooarchaeology connect these domesticates to older wild populations. A 13 ka wild sheep paleogenome predates sheep domestication; goats derive from bezoar populations with genetic lineages much older than domestication; cattle derive from aurochs; and wild dromedaries existed before their late domestication.
+
+### Judgment on the claim
+
+**The claim is not supported if "appearance" means biological creation or species origin.** The dates near 10-11 ka are domestication transitions for several livestock, not evidence that those animal lineages first came into existence then. The dromedary is also chronologically inconsistent with an all-four 11 ka domestication cluster.
+
+**What would need to be corrected for the stronger claim to hold:** the argument would need evidence that the relevant animal lineages were absent before the proposed date and appeared without pre-existing wild progenitors. The ancient-DNA and zooarchaeological evidence encoded here instead supports domestication from older wild populations.
+
+Primary references:
+
+- Frantz et al. (2020), *Animal domestication in the era of ancient genomics*, Nature Reviews Genetics.
+- Yurtman et al. (2024), *The Population History of Domestic Sheep Revealed by Paleogenomes*, Molecular Biology and Evolution.
+- Naderi et al. (2007), domestic goat mitochondrial diversity, PLOS ONE.
+- Rossi et al. (2024), *The genomic natural history of the aurochs*, Nature.
+- Almathen et al. (2016), *Ancient and modern DNA reveal dynamics of domestication and cross-continental dispersal of the dromedary*, PNAS.
+
 ## Repository structure
 
 ~~~text
@@ -675,6 +707,7 @@ python scripts/generate_model08_outputs.py
 python scripts/generate_model09_outputs.py
 python scripts/generate_model10_outputs.py
 python scripts/generate_model11_outputs.py
+python scripts/generate_model12_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -690,7 +723,7 @@ python scripts/generate_model11_outputs.py
 9. Historically constrained migration, isolation, endogamy, demography, and founder scenarios: implemented
 10. Evidence-calibrated chronology, population uncertainty, and required mixing thresholds: implemented
 11. Genetic admixture versus genealogical spread: implemented
-12. Domestication timing versus biological species appearance
+12. Domestication timing versus biological species appearance: implemented
 13. Population-genetic detectability of a specially inserted pair
 14. Agency inference: artifacts versus fine-tuning
 15. Evolution of cooperation, punishment, conformity, and moral behavior
