@@ -52,6 +52,12 @@ from .genealogy import (
     simulate_founder_spread,
     simulate_replicates,
 )
+from .pedigree_genome import (
+    PedigreeGenomeReplicateSummary,
+    PedigreeGenomeResult,
+    simulate_pedigree_genome,
+    simulate_pedigree_genome_replicates,
+)
 from .structured import (
     StructuredSpreadResult,
     add_linear_barrier,
@@ -82,6 +88,8 @@ __all__ = [
     "GeneticSegmentHistory",
     "OverlapSpreadResult",
     "PedigreeCoalescenceResult",
+    "PedigreeGenomeReplicateSummary",
+    "PedigreeGenomeResult",
     "StructuredSpreadResult",
     "TemporalSpreadResult",
     "add_linear_barrier",
@@ -116,6 +124,8 @@ __all__ = [
     "simulate_path_replicates",
     "simulate_segment_history",
     "simulate_pedigree_coalescence",
+    "simulate_pedigree_genome",
+    "simulate_pedigree_genome_replicates",
     "simulate_replicates",
     "simulate_single_path",
     "simulate_structured_coalescence_replicates",
