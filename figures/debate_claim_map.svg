@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690">
+<defs>
+  <linearGradient id="head" x1="0" x2="1"><stop offset="0%" stop-color="#172033"/><stop offset="100%" stop-color="#334155"/></linearGradient>
+  <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity=".10"/></filter>
+</defs>
+<rect width="1280" height="690" fill="#f7fafc"/>
+<style>
+ text{font-family:Inter,Arial,sans-serif;fill:#172033}
+ .card{fill:white;stroke:#dde6ed;stroke-width:1}
+ .kam{fill:#7b2cbf}.vah{fill:#2a9d8f}.syn{fill:#64748b}
+ .muted{fill:#667085}
+ .tiny{font-size:11px}.small{font-size:12px}.body{font-size:13px}
+</style>
+<rect x="0" y="0" width="1280" height="92" fill="url(#head)"/>
+<text x="48" y="42" fill="white" font-size="27" font-weight="700">From debate claims to testable models</text>
+<text x="48" y="69" fill="#dbe7f2" font-size="14">Speaker attribution follows the transcript; model judgments remain independent scientific evaluations.</text>
+
+<!-- speaker legend -->
+<circle cx="943" cy="42" r="8" class="kam"/><text x="958" y="47" fill="white" font-size="12">Mr. Kamkar claim/argument</text>
+<circle cx="1102" cy="42" r="8" class="vah"/><text x="1117" y="47" fill="white" font-size="12">Dr. Vahdati-Nasab objection/claim</text>
+
+<!-- genealogy card -->
+<rect class="card" x="40" y="122" width="740" height="238" rx="18" filter="url(#s)"/>
+<text x="66" y="156" font-size="19" font-weight="700">Genealogy, migration, isolation & DNA</text>
+<text x="66" y="180" class="small muted">Models 01–11 + interactive continental explorer</text>
+<circle cx="73" cy="218" r="7" class="kam"/><text x="91" y="223" class="body">Recent genealogical ancestry; rare migration can spread a founder lineage.</text>
+<circle cx="73" cy="250" r="7" class="vah"/><text x="91" y="255" class="body">Ancient regional occupation, isolation, endogamy, and missing genetic signals challenge simple versions.</text>
+<circle cx="73" cy="282" r="7" class="syn"/><text x="91" y="287" class="body">Models separate genealogical from genetic ancestry and make barrier timing explicit.</text>
+<text x="66" y="326" font-size="12" font-weight="700">Key scientific output</text>
+<text x="203" y="326" class="small">Compatibility depends on reproductive connectivity; zero paths are hard impossibilities.</text>
+
+<!-- model chips -->
+<g font-size="11" font-weight="700">
+<rect x="548" y="202" width="54" height="26" rx="13" fill="#eef2ff"/><text x="575" y="219" text-anchor="middle">M01–05</text>
+<rect x="610" y="202" width="54" height="26" rx="13" fill="#eef2ff"/><text x="637" y="219" text-anchor="middle">M06–08</text>
+<rect x="672" y="202" width="54" height="26" rx="13" fill="#eef2ff"/><text x="699" y="219" text-anchor="middle">M09–11</text>
+</g>
+
+<!-- domestication -->
+<rect class="card" x="806" y="122" width="434" height="112" rx="18" filter="url(#s)"/>
+<text x="832" y="153" font-size="17" font-weight="700">Livestock chronology • Model 12</text>
+<circle cx="837" cy="181" r="6" class="kam"/><text x="852" y="186" class="small">“Eight pairs” linked to Adam-era animal appearance.</text>
+<circle cx="837" cy="207" r="6" class="vah"/><text x="852" y="212" class="small">Domestication is not biological lineage origin.</text>
+
+<!-- detectability -->
+<rect class="card" x="806" y="248" width="434" height="112" rx="18" filter="url(#s)"/>
+<text x="832" y="279" font-size="17" font-weight="700">Inserted-pair detectability • Model 13</text>
+<circle cx="837" cy="307" r="6" class="kam"/><text x="852" y="312" class="small">Special pair inserted into an existing human population.</text>
+<circle cx="837" cy="333" r="6" class="vah"/><text x="852" y="338" class="small">Why would an independent insertion match human genetics?</text>
+
+<!-- agency -->
+<rect class="card" x="40" y="386" width="580" height="142" rx="18" filter="url(#s)"/>
+<text x="66" y="420" font-size="18" font-weight="700">Agency & fine-tuning • Model 14</text>
+<circle cx="72" cy="452" r="7" class="kam"/><text x="90" y="457" class="body">Stone-tool pattern recognition is extended as an analogy to cosmic fine-tuning.</text>
+<text x="66" y="491" font-size="12" font-weight="700">Model judgment</text>
+<text x="168" y="491" class="small">Same Bayesian form, but archaeological calibration does not transfer automatically to cosmology.</text>
+
+<!-- morality -->
+<rect class="card" x="646" y="386" width="594" height="142" rx="18" filter="url(#s)"/>
+<text x="672" y="420" font-size="18" font-weight="700">Moral evolution & conformity • Model 15</text>
+<circle cx="678" cy="452" r="7" class="vah"/><text x="696" y="457" class="body">Evolutionary/conformity account of norm-following and the “middle” majority.</text>
+<circle cx="678" cy="483" r="7" class="kam"/><text x="696" y="488" class="body">Group acceptance cannot by itself define moral truth.</text>
+<text x="672" y="514" class="small muted">Descriptive norm dynamics are separated from normative justification.</text>
+
+<!-- synthesis bottom -->
+<rect x="40" y="556" width="1200" height="94" rx="18" fill="#172033"/>
+<text x="66" y="589" fill="white" font-size="17" font-weight="700">Repository rule</text>
+<text x="66" y="616" fill="#dbe7f2" font-size="13">A debate claim is not treated as established because a simulation can reproduce it. Each section asks what follows under explicit assumptions, then states what evidence would be needed to strengthen or reject the historical claim.</text>
+<text x="66" y="637" fill="#a9bac9" font-size="11">Speaker labels identify who advanced the claim or objection in the transcript; synthesized repository claims are labeled as synthesis.</text>
+</svg>
