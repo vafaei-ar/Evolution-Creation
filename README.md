@@ -359,11 +359,11 @@ f_{t+1}
 \left[(1-m)(1-f_t)\right]^2,
 ```
 
-where (m) is the external-parent probability per parental draw.
+where $m$ is the external-parent probability per parental draw.
 
 ![Late-contact sensitivity](figures/model09_late_contact_sensitivity.svg)
 
-With nine generations, a finite (N=100) simulation gives about:
+With nine generations, a finite $N=100$ simulation gives about:
 
 - 0.1% external parents: 5.6% probability of complete fixation
 - 0.5%: 41.5%
