@@ -654,6 +654,8 @@ Primary references:
 
 The debate connects the Qur'anic **"eight pairs"** of livestock with the proposed Adam period and treats the roughly Neolithic timing of several domestic animals as potentially supportive of a special-creation scenario.
 
+[![Open Model 12 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/12_domestication.ipynb)
+
 ### Result
 
 Model 12 separates **domestication/management** from **biological lineage origin**.
@@ -686,6 +688,8 @@ Primary references:
 
 The special-creation scenario is partly defended as **genetically non-excludable**: a pair could appear within an existing human population around 11 ka, interbreed, and later become genealogical ancestors without modern genetics necessarily recovering an obvious "Adam and Eve" signature.
 
+[![Open Model 13 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/13_inserted_pair_detectability.ipynb)
+
 ### Result
 
 Model 13 separates a **genetically ordinary insertion** from a **genetically distinctive insertion**.
@@ -713,6 +717,8 @@ With an illustrative 1% per-marker probability of surviving and being sampled, t
 ### Claim from the debate
 
 The debate argues that patterned stone tools justify an inference to **agency**, and then extends that reasoning to cosmic order, regularity, and fine-tuning: if archaeologists reject a random natural origin for carefully modified stones, analogous patterns in the universe may support a cosmic agency inference.
+
+[![Open Model 14 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/14_agency_fine_tuning.ipynb)
 
 ### Result
 
@@ -758,6 +764,8 @@ The morality discussion contains two separable claims.
 One is descriptive: cooperation, punishment, sensitivity to group norms, and flexible conformity can be shaped by evolutionary and cultural pressures. The debate even proposes a broad distribution in which many people adapt their behavior to the prevailing social norm.
 
 The second is a philosophical objection: **group acceptance cannot define moral truth**, because conformity can sometimes require participation in behavior we independently judge immoral.
+
+[![Open Model 15 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/15_moral_evolution.ipynb)
 
 ### Result
 
