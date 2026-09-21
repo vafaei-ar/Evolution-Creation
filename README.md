@@ -680,6 +680,34 @@ Primary references:
 - Rossi et al. (2024), *The genomic natural history of the aurochs*, Nature.
 - Almathen et al. (2016), *Ancient and modern DNA reveal dynamics of domestication and cross-continental dispersal of the dromedary*, PNAS.
 
+## Model 13: population-genetic detectability of a specially inserted pair
+
+### Claim from the debate
+
+The special-creation scenario is partly defended as **genetically non-excludable**: a pair could appear within an existing human population around 11 ka, interbreed, and later become genealogical ancestors without modern genetics necessarily recovering an obvious "Adam and Eve" signature.
+
+### Result
+
+Model 13 separates a **genetically ordinary insertion** from a **genetically distinctive insertion**.
+
+If the pair is genetically drawn from the same distribution as surrounding humans and carries no unique identifying feature, there is no unique marker for genetics to detect by construction.
+
+If the pair carries private neutral variants, those variants have a stochastic fate. In an illustrative Wright-Fisher population with effective size 10,000, two initial copies of one private marker, and about 400 generations, Monte Carlo simulations put survival of a single neutral marker on the order of **1%**. Most individual private variants are therefore lost.
+
+But many distinctive variants change the inference:
+
+![Private marker detectability](figures/model13_marker_detectability.svg)
+
+With an illustrative 1% per-marker probability of surviving and being sampled, the independent-marker approximation gives about **63%** probability of detecting at least one of 100 distinctive markers and **>99%** for 500. Real variants are linked, so this is a sensitivity calculation rather than a genome-wide likelihood.
+
+### Judgment on the claim
+
+**The weak claim is supported: genetics need not detect such a pair.** A genetically ordinary pair has no unique genetic test, and a small number of neutral private markers can disappear by drift.
+
+**The strong claim "genetics could never detect them" is not supported.** If a specially created pair was genomically unusual in many independent ways, complete disappearance of every distinctive signal becomes progressively less plausible.
+
+**What must be corrected for the claim to be scientifically testable:** specify the predicted genetic difference between the pair and contemporaneous humans, effective population structure, reproductive success, selection on distinctive alleles, and the sampling/detection criterion. Without a predicted genetic difference, non-detection is not positive evidence for the event.
+
 ## Repository structure
 
 ~~~text
@@ -708,6 +736,7 @@ python scripts/generate_model09_outputs.py
 python scripts/generate_model10_outputs.py
 python scripts/generate_model11_outputs.py
 python scripts/generate_model12_outputs.py
+python scripts/generate_model13_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -724,7 +753,7 @@ python scripts/generate_model12_outputs.py
 10. Evidence-calibrated chronology, population uncertainty, and required mixing thresholds: implemented
 11. Genetic admixture versus genealogical spread: implemented
 12. Domestication timing versus biological species appearance: implemented
-13. Population-genetic detectability of a specially inserted pair
+13. Population-genetic detectability of a specially inserted pair: implemented
 14. Agency inference: artifacts versus fine-tuning
 15. Evolution of cooperation, punishment, conformity, and moral behavior
 
