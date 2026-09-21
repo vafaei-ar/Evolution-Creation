@@ -16,6 +16,7 @@ from .coalescence import (
     make_parent_source_matrix,
     simulate_coalescence_replicates,
     simulate_pedigree_coalescence,
+    simulate_structured_coalescence_replicates,
     simulate_structured_pedigree_coalescence,
 )
 from .demography import (
@@ -91,6 +92,7 @@ __all__ = [
     "simulate_overlapping_ancestry_sets",
     "simulate_pedigree_coalescence",
     "simulate_replicates",
+    "simulate_structured_coalescence_replicates",
     "simulate_structured_founder_spread",
     "simulate_structured_pedigree_coalescence",
     "simulate_structured_replicates",
