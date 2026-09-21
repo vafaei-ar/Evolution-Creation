@@ -2,11 +2,21 @@
 
 A reproducible Python project for testing quantitative claims raised in a debate about evolution, creation, human genealogy, migration, and genetic ancestry.
 
+**Debate source:** [Evolution and Creation debate on YouTube](https://www.youtube.com/watch?v=hsJ-zLVn0H0)
+
+The **Claim from the debate** statements below are concise paraphrases of claims made during the discussion, not verbatim quotations. The **Judgment on the claim** sections distinguish mathematical possibility, model-dependent probability, and historically supported inference.
+
+
 The project does **not** assume that a theological or historical claim is true. Each model is framed conditionally:
 
 > Given a stated set of assumptions, what follows mathematically or computationally?
 
 ## Model 01: spread of a genealogical founder
+
+### Claim from the debate
+
+A single person entering a much larger population can, through ordinary intermarriage, eventually become a genealogical ancestor of essentially everyone; the founder lineage should not be treated as a permanently separate clan competing numerically with the rest of the population.
+
 
 The baseline asks:
 
@@ -24,7 +34,20 @@ $$
 
 The stochastic simulation samples parents explicitly, so rare founder lineages can disappear by chance.
 
+### Judgment on the claim
+
+**Supported as a mathematical possibility, but not guaranteed.** In a completely mixed neutral population, genealogical descendant status can spread rapidly because every mating between a descendant and a non-descendant creates children who are descendants of the founder. The model therefore supports the core point that a founder who begins as a tiny fraction of the population can eventually become universal.
+
+The important qualification is early stochastic extinction: a founder can leave no continuing lineage before the deterministic spread regime is reached. Model 01 therefore does **not** assign a historical probability to any particular ancient founder.
+
+**What must be corrected to make the historical claim stronger:** specify the real mating structure, reproductive success, population size, and whether the founder lineage survived its first few generations. A panmictic toy population establishes possibility, not historical occurrence.
+
 ## Model 02: structured populations and migration
+
+### Claim from the debate
+
+Even when human populations are geographically structured, rare migration can carry a founder lineage into distant populations; therefore a very small but nonzero migration rate may be enough for ancestry to spread widely.
+
 
 Model 02 removes the strongest unrealistic assumption from Model 01: complete mixing.
 
@@ -56,7 +79,20 @@ The generated SVG below animates one stochastic run across seven demes.
 
 Model 02 also has a hard-barrier control. A permanent barrier makes the migration matrix block-disconnected. If the founder starts on one side, ancestry cannot reach the other side regardless of how many generations pass.
 
+### Judgment on the claim
+
+**Conditionally supported.** Model 02 confirms that nonzero reproductive connectivity can spread founder ancestry across demes, while a permanent zero-migration barrier makes spread across that barrier exactly impossible.
+
+The phrase "the migration rate was nonzero" is therefore scientifically incomplete. A rate can be positive yet too small, too late, or too geographically restricted to produce universal ancestry by a specified deadline.
+
+**What must be corrected to satisfy the stronger claim:** provide a time scale and a defensible migration / parental-source matrix, and show that every present-day population is connected by at least one reproductive path with enough generations for the lineage to spread. Nonzero connectivity alone is not a probability estimate.
+
 ## Model 03: time-varying connectivity
+
+### Claim from the debate
+
+Historical isolation does not automatically rule out shared genealogy. What matters is whether founder ancestry crossed into a population before a barrier closed, or whether later contact reopened a reproductive path.
+
 
 Model 03 allows migration barriers to appear or disappear over time.
 
@@ -90,7 +126,18 @@ In this run, the barrier closes at generation 20. Founder ancestry has already e
 
 ![Time-varying barrier animation](figures/model03_barrier_animation.svg)
 
+### Judgment on the claim
+
+**Supported.** The timing of isolation is a genuine causal variable. If a barrier is present before founder ancestry arrives, ancestry cannot cross it. If the same barrier closes only after ancestry has entered, descendants can continue spreading within the newly isolated component. Reopening later can restart exchange.
+
+**What must be corrected in historical arguments:** replace statements such as "this population was isolated" with a dated sequence: when did the founder lineage exist, when was the reproductive route open, when did it close, and did it later reopen? The ordering of those events can reverse the conclusion.
+
 ## Model 04: population growth, carrying capacity, and overlapping ancestry
+
+### Claim from the debate
+
+The objection that "one founder lineage can never catch a much larger native population because both groups reproduce exponentially" is misleading once intermarriage occurs: descendants of the founder and descendants of the original population become overlapping sets.
+
 
 Model 04 addresses a common intuition trap: treating "descendants of the founder" and "descendants of everyone else" as two disjoint populations that each grow exponentially.
 
@@ -126,7 +173,18 @@ Once intermarriage occurs, "founder descendants" and "background descendants" ar
 
 The notebook also lets you introduce logistic carrying capacity, temporary bottlenecks, and a relative reproductive-weight sensitivity parameter. These are conceptual experiments, not estimates of prehistoric demography.
 
+### Judgment on the claim
+
+**The "two separate exponential lineages" objection is rejected under ordinary intermarriage.** Once a founder descendant has children with members of the background population, "founder descendants" and "background descendants" are no longer mutually exclusive populations. The same person can belong to both sets. Under neutral random mating, population growth or carrying capacity changes absolute counts but does not by itself prevent the founder-descendant fraction from spreading according to the ancestry recurrence.
+
+**What would make the objection valid:** sustained reproductive separation, strong assortative mating, or strong differential reproductive success that keeps the two descendant sets close to disjoint. Merely observing that both groups reproduce does not block genealogical takeover.
+
 ## Model 05: endogamy and assortative mating
+
+### Claim from the debate
+
+Highly endogamous or historically isolated communities, such as the examples raised in the debate, may be important counterexamples to a recent universal genealogical-ancestor claim because reproductive isolation can prevent an outside lineage from entering.
+
 
 Model 05 replaces purely geographic barriers with persistent **social mating structure**.
 
@@ -152,7 +210,18 @@ The vertical axis is an abstract same-state mate-choice weight. It is included a
 
 The model distinguishes **perfect isolation** from **rare bridging marriages**. A single cross-community genealogical bridge can seed ancestry inside an otherwise highly endogamous community, after which within-community reproduction can propagate it.
 
+### Judgment on the claim
+
+**The objection is valid only at the limit of complete reproductive isolation.** Perfect endogamy creates disconnected pedigree components, so a founder outside a component can never become a genealogical ancestor inside it. With incomplete endogamy, even rare bridging marriages can seed founder ancestry, although the time to spread can become much longer.
+
+**What the universal-ancestor claim must show:** not simply geographic proximity, but at least one effective reproductive bridge into every relevant community, followed by enough within-community reproduction. For historical groups cited as endogamous, the decisive quantity is cross-group parentage through time, not the label "endogamous" by itself.
+
 ## Model 06: genealogical MRCA and the Identical Ancestors Point
+
+### Claim from the debate
+
+Genealogical common ancestry can be dramatically more recent than genetic coalescence. A most recent genealogical common ancestor, and later an Identical Ancestors Point, can occur only thousands of years in the past even though genetic lineages trace much deeper.
+
 
 Model 06 traces complete two-parent pedigrees **backward** from the present generation.
 
@@ -208,7 +277,20 @@ Primary references:
 - Joseph T. Chang (1999), Recent common ancestors of all present-day individuals, Advances in Applied Probability 31(4), 1002-1026. https://doi.org/10.1239/aap/1029955256
 - Douglas L. T. Rohde, Steve Olson, and Joseph T. Chang (2004), Modelling the recent common ancestry of all living humans, Nature 431, 562-566. https://doi.org/10.1038/nature02842
 
+### Judgment on the claim
+
+**The core genealogical claim is supported; the specific historical date is not established by this model alone.** Chang-style random-mating pedigrees do produce MRCA times on the order of \(\log_2 N\) generations and an Identical Ancestors Point later than the MRCA. This confirms that genealogical ancestry can collapse far more recently than genetic lineages.
+
+However, applying an ideal panmictic result directly to all humans ignores migration barriers, endogamy, changing population size, and geography. Thus genetic dates of tens or hundreds of thousands of years do **not** by themselves refute a much more recent genealogical MRCA, but neither does the idealized MRCA model prove that an 11 ka global ancestor actually existed.
+
+**What must be corrected to make the 11 ka claim historical rather than mathematical:** embed the MRCA calculation in empirically constrained population structure and migration history, which is the purpose of Models 09 and 10.
+
 ## Model 07: genealogical ancestry versus autosomal genetic ancestry
+
+### Claim from the debate
+
+A person can be a genuine genealogical ancestor while leaving no identifiable autosomal DNA in a particular distant descendant. Therefore absence of detectable DNA from a proposed ancestor is not, by itself, proof that the genealogical relationship did not exist.
+
 
 Model 07 adds chromosomes and recombination to the genealogical story.
 
@@ -270,7 +352,20 @@ Primary references:
 - S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
 - A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
 
+### Judgment on the claim
+
+**Supported for a specified genealogical path.** In the published approximation used here, a specified genealogical ancestor eight generations back has an autosomal-genetic-ancestor probability of about **86.15%** along that path. At 16 generations, that probability falls to about **1.57%**, corresponding to about a **98.43% probability of zero autosomal contribution along that single path**.
+
+This directly supports the claim that genealogical ancestry and detectable genetic ancestry are different concepts. But pedigree collapse can give a distant ancestor multiple paths to the same descendant, increasing the chance that some DNA survives.
+
+**What must be corrected in the strongest version of the claim:** "no detectable DNA" cannot be inferred from the single-path formula alone for a universal ancestor reached through many pedigree paths. Population-scale pedigree and recombination must be modeled jointly.
+
 ## Model 08: integrated pedigree + autosomal founder DNA
+
+### Claim from the debate
+
+A founder pair could become genealogical ancestors of an entire population while their autosomal genetic contribution becomes absent in some descendants or too fragmented to be detectable, so genealogical universality does not require genetic universality.
+
 
 Model 08 finally places genealogy and chromosome inheritance inside the **same finite population**.
 
@@ -322,7 +417,20 @@ Primary references:
 - S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
 - A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
 
+### Judgment on the claim
+
+**Supported as a joint mathematical possibility, not as a historical probability.** In the representative \(N=500\), two-founder run, both founders become genealogical ancestors of everyone by generation 13. At that same generation, **15.6%** of the population carries no tagged autosomal DNA from the founder set, **23.6%** carries only sub-6-cM founder segments, and **60.8%** carries at least one founder-derived segment of 6 cM or larger.
+
+So universal genealogy can coexist with heterogeneous or absent autosomal founder DNA in some descendants. However, the same run also shows that founder-derived DNA can remain common after genealogical universality; the model does **not** support the stronger statement that a universal founder pair should necessarily become genetically invisible.
+
+**What must be corrected to test the historical Adam-and-Eve claim:** use realistic population structure and founder-specific genomic tagging over the actual historical time interval, rather than interpreting this small panmictic population as a reconstruction of human history.
+
 ## Model 09: historically constrained founder scenarios
+
+### Claim from the debate
+
+If an Adam-and-Eve founder pair appeared roughly 11,000 years ago in West Asia, later migration and intermarriage could in principle spread their genealogy into already established populations in Australia and the Americas; Tasmania is a special hard-isolation case that must be handled separately.
+
 
 Model 09 tests the debate's proposed **~11,000-year founder pair in West Asia** against time-dependent reproductive connectivity rather than against an unconstrained random-mating world.
 
@@ -397,7 +505,25 @@ Primary external constraints used in the documentation:
 - Willerslev & Meltzer (2021), *Peopling of the Americas as inferred from ancient genomics*, Nature 594, 356-364.
 - National Museum of Australia material on Tasmania's separation and permanent British settlement beginning in 1803.
 
+### Judgment on the claim
+
+**Impossible while a hard reproductive barrier is closed; conditionally possible after it reopens.** In the Model 09 late-contact experiment, which deliberately assumes the external population is already 100% descended from both founders, a formerly isolated \(N=100\) deme with nine generations remaining had approximately:
+
+- **5.6%** probability of complete genealogical fixation at a 0.1% external-parent probability per parental draw;
+- **41.5%** at 0.5%;
+- **79.2%** at 1%;
+- **98.6%** at 2%.
+
+These are toy-model sensitivities, not estimates of Tasmanian history. The important result is that "some later contact occurred" does not by itself settle the claim: the probability changes from small to large over a relatively narrow range of effective reproductive mixing.
+
+**What must be corrected to satisfy the 11 ka scenario:** demonstrate a reproductive path into every otherwise disconnected population and constrain its effective parentage rate and timing. For Tasmania in particular, later contact must do the work if the founder date is later than geographic isolation.
+
 ## Model 10: evidence-calibrated uncertainty envelopes
+
+### Claim from the debate
+
+After archaeological, demographic, and genetic constraints are included, an approximately 11 ka founder pair could still be compatible with universal present-day genealogical ancestry, provided enough later reproductive mixing occurred across the populations that were already established or isolated.
+
 
 Model 10 asks a stricter question than Model 09: **which numerical inputs are actually supported by published evidence, and which decisive inputs remain unknown?**
 
@@ -476,6 +602,17 @@ Primary references:
 - R. Byard and H. Maxwell-Stewart (2024), *Estimating early contact-era populations for lutruwita (Tasmania)*, Asia-Pacific Economic History Review 64, 72-93.
 - A.-S. Malaspinas et al. (2016), *A genomic history of Aboriginal Australia*, Nature 538, 207-214.
 - E. Willerslev and D. J. Meltzer (2021), *Peopling of the Americas as inferred from ancient genomics*, Nature 594, 356-364.
+
+### Judgment on the claim
+
+**Historically unresolved with the evidence currently encoded in the repository.** Model 10 sharpens the chronology: the evidence-supported generation interval places an 11 ka founder about **367-423 generations** in the past, while the direct Bassian land-bridge bracket places geographic closure before that founder insertion. Using the published contact-era population-model set, the approximate external-parent rate required after contact is:
+
+- **8 generations:** 1.68-1.90% per parental draw for a 50% complete-fixation target, and 2.18-2.40% for a 95% target;
+- **9 generations:** 0.84-0.95% for a 50% target, and 1.09-1.20% for a 95% target.
+
+Those are required-rate thresholds under deliberately favorable assumptions, **not inferred historical rates**. The reviewed evidence does not currently provide a defensible Tasmania-specific per-generation reproductive-mixing estimate, so a historical probability for the universal-ancestor claim cannot be calculated from these data alone.
+
+**What would satisfy or strongly disfavor the claim:** obtain a defensible demographic estimate of post-contact reproductive mixing. Rates consistently above the required threshold would make late genealogical fixation compatible with the model; rates substantially below it would make that route unlikely under the stated assumptions. Alternatively, evidence of an earlier reproductive bridge would change the chronology. Without one of those additions, assigning a numerical historical probability would be false precision.
 
 ## Repository structure
 
