@@ -11,6 +11,78 @@ The project does **not** assume that a theological or historical claim is true. 
 
 > Given a stated set of assumptions, what follows mathematically or computationally?
 
+## Interactive synthesis: continental founder-spread explorer
+
+This is **not Model 16**. It is an interactive synthesis of the genealogy, migration, endogamy, historical-constraint, and admixture models.
+
+[![Open the continental explorer in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/interactive_continental_explorer.ipynb)
+
+The explorer lets the user set:
+
+- how many years ago Adam and Eve enter the modeled population;
+- generation interval and founder region;
+- starting population of each macroregion;
+- target population used for the visual growth trajectory;
+- a complete destination × source parental-migration matrix;
+- within-region random-mating / endogamy strength;
+- number of initial joint children of the pair;
+- timing and strength of a late increase in interregional contact;
+- whether the animated map displays descent from **both founders**, **either founder**, or **mean founder-pair autosomal DNA**.
+
+The engine uses five macrocontinents plus a separate **Middle East** source node so that the proposed origin is not hidden inside a continent-scale Asia compartment.
+
+![Continental explorer preview](figures/continental_explorer_preview.svg)
+
+### Evidence-backed population preset
+
+The default founder date is 11,000 years ago, approximately 9000 BCE. A historical regional reconstruction gives the following coarse starting values:
+
+| Region | Default start population |
+| --- | ---: |
+| Middle East | 241,000 |
+| Africa | 343,000 |
+| Europe | 759,000 |
+| Asia | 1,555,000 |
+| Americas | 415,000 |
+| Oceania | 252,000 |
+
+The six values total about **3.565 million**. Asia combines the source table's Asia and CIS categories, while the Americas combine its Latin America and North America categories.
+
+These are **not census counts**. Deep-prehistory population estimates are highly uncertain. HYDE 3.2 independently places global population around 4.4 million in 10,000 BCE and reports a very wide uncertainty/scenario range. When auto-population mode is enabled, the notebook log-interpolates among 1000-year regional anchors to match the selected founder date; this interpolation is a visualization/modeling convenience, not additional evidence. Every population field remains editable.
+
+### Migration and mixing defaults are deliberately not presented as historical estimates
+
+The explorer's migration control is a **parent-source matrix**: for a child born in destination region (i), entry (M_{ij}) is the fraction of parental draws coming from source region (j).
+
+There is no defensible single six-region, per-generation Holocene migration matrix that can simply be read from the literature. Therefore the supplied matrix and within-region mixing values are explicitly labeled **teaching sensitivity assumptions**.
+
+Users can set them to zero, increase them, impose strong endogamy, or make interregional reproduction much more common and immediately see how the conclusion changes.
+
+### What the default teaching scenario does
+
+With the supplied illustrative migration/mixing settings, the deterministic model eventually makes all six macroregions descendants of both founders. The global both-founder fraction crosses about **99% by generation 56**, roughly 1,570 years after the proposed insertion.
+
+That number is **not a historical estimate**. It is useful precisely because the user can now reduce migration, increase endogamy, alter population sizes, or change the founder date and observe whether the result survives.
+
+At the same time, the modeled present-day mean founder-pair autosomal contribution remains tiny even when genealogy becomes universal. This visually reinforces the distinction established in Models 07, 08, and 11.
+
+### Interpretation
+
+A successful animation means:
+
+> Under these user-selected population, migration, timing, and mating assumptions, universal founder genealogy is compatible with the model.
+
+It does **not** mean:
+
+> Those parameter values occurred historically, therefore Adam and Eve existed.
+
+The explorer is intended to make the assumptions visible and falsifiable rather than bury them inside prose.
+
+Population references:
+
+- Historical regional population table used for the separate Middle East 9000 BCE preset: https://www.statista.com/statistics/1006557/global-population-per-continent-10000bce-2000ce/
+- Klein Goldewijk et al. (2017), HYDE 3.2, *Earth System Science Data* 9:927-953, DOI 10.5194/essd-9-927-2017.
+
 ## Model 01: spread of a genealogical founder
 
 ### Claim from the debate
@@ -834,6 +906,7 @@ python scripts/generate_model12_outputs.py
 python scripts/generate_model13_outputs.py
 python scripts/generate_model14_outputs.py
 python scripts/generate_model15_outputs.py
+python scripts/generate_continental_explorer_preview.py
 ~~~
 
 ## Modeling roadmap
@@ -853,6 +926,8 @@ python scripts/generate_model15_outputs.py
 13. Population-genetic detectability of a specially inserted pair: implemented
 14. Agency inference: artifacts versus fine-tuning: implemented
 15. Evolution of cooperation, punishment, conformity, and moral behavior: implemented
+
+**Interactive synthesis:** continental founder-spread explorer with editable populations, migration matrix, mixing, timing, animated map, and genealogy-vs-DNA display: implemented.
 
 ## Computational modeling endpoint
 

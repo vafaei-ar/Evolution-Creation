@@ -17,6 +17,7 @@ dev = [
   "pytest>=8",
   "jupyter>=1.0",
   "ipywidgets>=8",
+  "plotly>=5.24",
 ]
 
 [tool.setuptools.packages.find]

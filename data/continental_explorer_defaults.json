@@ -1,0 +1,253 @@
+{
+  "title": "Interactive continental explorer defaults",
+  "interpretation": "Population values are coarse regional teaching presets. Migration and mixing values are modeler-chosen sensitivity defaults, not measured historical rates.",
+  "regions": [
+    "Middle East",
+    "Africa",
+    "Europe",
+    "Asia",
+    "Americas",
+    "Oceania"
+  ],
+  "coordinates": {
+    "Middle East": [
+      33,
+      44
+    ],
+    "Africa": [
+      7,
+      20
+    ],
+    "Europe": [
+      51,
+      15
+    ],
+    "Asia": [
+      35,
+      100
+    ],
+    "Americas": [
+      15,
+      -90
+    ],
+    "Oceania": [
+      -20,
+      135
+    ]
+  },
+  "founder_default": {
+    "founder_age_years": 11000,
+    "generation_interval_years": 28,
+    "founder_region": "Middle East",
+    "founder_pair_joint_children": 2
+  },
+  "population_preset_9000_bce": {
+    "status": "secondary-source regional reconstruction; values rounded to people",
+    "values": {
+      "Middle East": 241000,
+      "Africa": 343000,
+      "Europe": 759000,
+      "Asia": 1555000,
+      "Americas": 415000,
+      "Oceania": 252000
+    },
+    "aggregation_notes": {
+      "Asia": "Asia 1,317,000 + CIS 238,000 in the source table",
+      "Americas": "Latin America 363,000 + North America 52,000 in the source table"
+    },
+    "source": {
+      "label": "Statista historical continental population table, 9000 BCE row",
+      "url": "https://www.statista.com/statistics/1006557/global-population-per-continent-10000bce-2000ce/",
+      "note": "Used because the table provides a separate Middle East category. Prehistoric values are highly uncertain."
+    }
+  },
+  "population_target_2000_ce": {
+    "status": "same source-compatible endpoint; used only to create a smooth visual population trajectory",
+    "values": {
+      "Middle East": 241784000,
+      "Africa": 818847000,
+      "Europe": 518664000,
+      "Asia": 3700751000,
+      "Americas": 838763000,
+      "Oceania": 26024000
+    },
+    "aggregation_notes": {
+      "Asia": "Asia 3,419,032,000 + CIS 281,719,000",
+      "Americas": "Latin America 523,211,000 + North America 315,552,000"
+    }
+  },
+  "global_crosscheck": {
+    "source": "HYDE 3.2",
+    "finding": "Global population estimate for 10,000 BCE about 4.4 million, with very wide uncertainty (<0.01 to 8.9 million in the paper's scenario range).",
+    "doi": "10.5194/essd-9-927-2017"
+  },
+  "parent_source_offdiag_default": {
+    "status": "modeler-chosen teaching sensitivity preset; NOT an empirical Holocene migration matrix",
+    "semantics": "row=destination child's region, column=source region; value=fraction of parental draws from that external region per generation",
+    "values": [
+      [
+        0,
+        0.0015,
+        0.0015,
+        0.003,
+        0,
+        0
+      ],
+      [
+        0.0015,
+        0,
+        0.0005,
+        0.0005,
+        0,
+        0
+      ],
+      [
+        0.0015,
+        0.0005,
+        0,
+        0.001,
+        0,
+        0
+      ],
+      [
+        0.002,
+        0.0005,
+        0.001,
+        0,
+        0.00005,
+        0.00025
+      ],
+      [
+        0,
+        0,
+        0.00002,
+        0.00008,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0.00002,
+        0.00028,
+        0,
+        0
+      ]
+    ]
+  },
+  "mixing_strength_default": {
+    "status": "modeler-chosen sensitivity parameter; 0=no descendant-status diffusion beyond pooled composition, 1=full random mating within macroregion",
+    "values": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "late_contact_default": {
+    "start_years_ago": 500,
+    "external_parent_multiplier": 4,
+    "status": "teaching sensitivity control, not an empirical global contact estimate"
+  },
+  "population_anchors_bce": {
+    "status": "secondary-source regional reconstruction used for date-responsive teaching presets; values are people",
+    "interpolation": "Notebook log-interpolates between adjacent 1000-year anchors. This interpolation is a modeling convenience, not additional historical evidence.",
+    "anchors": {
+      "0": {
+        "Middle East": 14805000,
+        "Africa": 15186000,
+        "Europe": 29331000,
+        "Asia": 115884000,
+        "Americas": 12707000,
+        "Oceania": 327000
+      },
+      "1000": {
+        "Middle East": 10146000,
+        "Africa": 9264000,
+        "Europe": 16727000,
+        "Asia": 70508000,
+        "Americas": 8120000,
+        "Oceania": 302000
+      },
+      "2000": {
+        "Middle East": 7034000,
+        "Africa": 6260000,
+        "Europe": 10297000,
+        "Asia": 42986000,
+        "Americas": 5253000,
+        "Oceania": 284000
+      },
+      "3000": {
+        "Middle East": 4246000,
+        "Africa": 4148000,
+        "Europe": 6558000,
+        "Asia": 26132000,
+        "Americas": 3464000,
+        "Oceania": 273000
+      },
+      "4000": {
+        "Middle East": 1896000,
+        "Africa": 2352000,
+        "Europe": 4447000,
+        "Asia": 16094000,
+        "Americas": 2316000,
+        "Oceania": 265000
+      },
+      "5000": {
+        "Middle East": 1668000,
+        "Africa": 1517000,
+        "Europe": 3067000,
+        "Asia": 9836000,
+        "Americas": 1572000,
+        "Oceania": 260000
+      },
+      "6000": {
+        "Middle East": 811000,
+        "Africa": 1032000,
+        "Europe": 2134000,
+        "Asia": 6136000,
+        "Americas": 1092000,
+        "Oceania": 257000
+      },
+      "7000": {
+        "Middle East": 476000,
+        "Africa": 708000,
+        "Europe": 1499000,
+        "Asia": 3852000,
+        "Americas": 773000,
+        "Oceania": 255000
+      },
+      "8000": {
+        "Middle East": 336000,
+        "Africa": 490000,
+        "Europe": 1062000,
+        "Asia": 2436000,
+        "Americas": 559000,
+        "Oceania": 253000
+      },
+      "9000": {
+        "Middle East": 241000,
+        "Africa": 343000,
+        "Europe": 759000,
+        "Asia": 1555000,
+        "Americas": 415000,
+        "Oceania": 252000
+      },
+      "10000": {
+        "Middle East": 176000,
+        "Africa": 242000,
+        "Europe": 548000,
+        "Asia": 897000,
+        "Americas": 317000,
+        "Oceania": 251000
+      }
+    },
+    "source": {
+      "label": "Statista historical continental population table, 9000 BCE row",
+      "url": "https://www.statista.com/statistics/1006557/global-population-per-continent-10000bce-2000ce/",
+      "note": "Used because the table provides a separate Middle East category. Prehistoric values are highly uncertain."
+    }
+  }
+}
