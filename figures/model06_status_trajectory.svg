@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#111}.grid{stroke:#ddd}.line{fill:none;stroke-width:3}</style>
+<text x="450" y="30" text-anchor="middle" font-size="22">One exact backward pedigree: ancestor status by generation</text>
+<line class="grid" x1="80" y1="405.0" x2="860" y2="405.0"/>
+<text x="68" y="410.0" text-anchor="end" font-size="12">0.0</text>
+<line class="grid" x1="80" y1="335.0" x2="860" y2="335.0"/>
+<text x="68" y="340.0" text-anchor="end" font-size="12">0.2</text>
+<line class="grid" x1="80" y1="265.0" x2="860" y2="265.0"/>
+<text x="68" y="270.0" text-anchor="end" font-size="12">0.4</text>
+<line class="grid" x1="80" y1="195.0" x2="860" y2="195.0"/>
+<text x="68" y="200.0" text-anchor="end" font-size="12">0.6</text>
+<line class="grid" x1="80" y1="125.0" x2="860" y2="125.0"/>
+<text x="68" y="130.0" text-anchor="end" font-size="12">0.8</text>
+<line class="grid" x1="80" y1="55.0" x2="860" y2="55.0"/>
+<text x="68" y="60.0" text-anchor="end" font-size="12">1.0</text>
+<polyline class="line" stroke="#1f77b4" points="80.0,405.0 106.0,361.6 132.0,339.9 158.0,338.5 184.0,332.9 210.0,332.2 236.0,326.6 262.0,332.9 288.0,332.9 314.0,332.9 340.0,331.5 366.0,328.7 392.0,324.5 418.0,336.4 444.0,340.6 470.0,328.7 496.0,333.6 522.0,339.2 548.0,344.1 574.0,335.0 600.0,337.8 626.0,334.3 652.0,334.3 678.0,337.8 704.0,337.8 730.0,332.9 756.0,331.5 782.0,334.3 808.0,333.6 834.0,337.8 860.0,334.3"/>
+<line x1="610" y1="80" x2="642" y2="80" stroke="#1f77b4" stroke-width="3"/>
+<text x="652" y="85" font-size="12">no present descendants</text>
+<polyline class="line" stroke="#ff7f0e" points="80.0,55.0 106.0,98.4 132.0,120.1 158.0,121.5 184.0,127.1 210.0,127.8 236.0,133.4 262.0,127.1 288.0,127.1 314.0,127.8 340.0,146.7 366.0,216.0 392.0,302.1 418.0,351.1 444.0,382.6 470.0,393.1 496.0,400.1 522.0,402.9 548.0,404.3 574.0,405.0 600.0,405.0 626.0,405.0 652.0,405.0 678.0,405.0 704.0,405.0 730.0,405.0 756.0,405.0 782.0,405.0 808.0,405.0 834.0,405.0 860.0,405.0"/>
+<line x1="610" y1="102" x2="642" y2="102" stroke="#ff7f0e" stroke-width="3"/>
+<text x="652" y="107" font-size="12">partial ancestors</text>
+<polyline class="line" stroke="#2ca02c" points="80.0,405.0 106.0,405.0 132.0,405.0 158.0,405.0 184.0,405.0 210.0,405.0 236.0,405.0 262.0,405.0 288.0,405.0 314.0,404.3 340.0,386.8 366.0,320.3 392.0,238.4 418.0,177.5 444.0,141.8 470.0,143.2 496.0,131.3 522.0,122.9 548.0,116.6 574.0,125.0 600.0,122.2 626.0,125.7 652.0,125.7 678.0,122.2 704.0,122.2 730.0,127.1 756.0,128.5 782.0,125.7 808.0,126.4 834.0,122.2 860.0,125.7"/>
+<line x1="610" y1="124" x2="642" y2="124" stroke="#2ca02c" stroke-width="3"/>
+<text x="652" y="129" font-size="12">universal ancestors</text>
+<line x1="314.0" y1="55" x2="314.0" y2="405" stroke="#666" stroke-dasharray="5 5"/>
+<text x="319.0" y="397" font-size="12">MRCA = 9</text>
+<line x1="574.0" y1="55" x2="574.0" y2="405" stroke="#111" stroke-dasharray="8 5"/>
+<text x="579.0" y="380" font-size="12">IAP = 19</text>
+<text x="470" y="445" text-anchor="middle" font-size="15">Generations before present</text>
+<text x="22" y="230" transform="rotate(-90 22 230)" text-anchor="middle" font-size="15">Fraction of past generation</text>
+<text x="450" y="480" text-anchor="middle" font-size="11">N = 500, seed = 20260920. MRCA is the first universal ancestor; IAP is when no partial ancestors remain.</text>
+</svg>

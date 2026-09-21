@@ -8,6 +8,17 @@ from .assortment import (
     simulate_endogamy_founder_spread,
     simulate_endogamy_replicates,
 )
+from .coalescence import (
+    CHANG_IAP_MULTIPLIER,
+    CoalescenceReplicateSummary,
+    PedigreeCoalescenceResult,
+    chang_asymptotic_generations,
+    make_parent_source_matrix,
+    simulate_coalescence_replicates,
+    simulate_pedigree_coalescence,
+    simulate_structured_coalescence_replicates,
+    simulate_structured_pedigree_coalescence,
+)
 from .demography import (
     DemographicSpreadResult,
     OverlapSpreadResult,
@@ -22,7 +33,11 @@ from .demography import (
     simulate_demographic_replicates,
     simulate_overlapping_ancestry_sets,
 )
-from .genealogy import FounderSpreadResult, simulate_founder_spread, simulate_replicates
+from .genealogy import (
+    FounderSpreadResult,
+    simulate_founder_spread,
+    simulate_replicates,
+)
 from .structured import (
     StructuredSpreadResult,
     add_linear_barrier,
@@ -41,14 +56,18 @@ from .temporal import (
 )
 
 __all__ = [
+    "CHANG_IAP_MULTIPLIER",
+    "CoalescenceReplicateSummary",
     "DemographicSpreadResult",
     "EndogamySpreadResult",
     "FounderSpreadResult",
     "OverlapSpreadResult",
+    "PedigreeCoalescenceResult",
     "StructuredSpreadResult",
     "TemporalSpreadResult",
     "add_linear_barrier",
     "apply_population_bottleneck",
+    "chang_asymptotic_generations",
     "constant_population_schedule",
     "deterministic_ancestry_fraction_curve",
     "deterministic_descendant_counts",
@@ -60,17 +79,22 @@ __all__ = [
     "make_constant_schedule",
     "make_endogamy_matrix",
     "make_linear_migration_matrix",
+    "make_parent_source_matrix",
     "probability_all_communities_reached",
     "probability_of_global_fixation",
     "probability_of_global_fixation_by_barrier_timing",
+    "simulate_coalescence_replicates",
     "simulate_demographic_founder_spread",
     "simulate_demographic_replicates",
     "simulate_endogamy_founder_spread",
     "simulate_endogamy_replicates",
     "simulate_founder_spread",
     "simulate_overlapping_ancestry_sets",
+    "simulate_pedigree_coalescence",
     "simulate_replicates",
+    "simulate_structured_coalescence_replicates",
     "simulate_structured_founder_spread",
+    "simulate_structured_pedigree_coalescence",
     "simulate_structured_replicates",
     "simulate_time_varying_founder_spread",
     "simulate_time_varying_replicates",
