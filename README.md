@@ -173,15 +173,15 @@ Each past individual is classified as having no present descendants, being a par
 
 For Chang's idealized constant-size two-parent model, the large-population benchmarks are
 
-$
+```math
 T_{MRCA}\approx\log_2N
-$
+```
 
 and
 
-$
-T_{IAP}\approx1.77\log_2N.
-$
+```math
+T_{IAP}\approx1.77\log_2N
+```
 
 The exact finite simulations approach these only gradually.
 
