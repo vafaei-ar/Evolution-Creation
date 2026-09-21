@@ -48,7 +48,7 @@ The default founder date is 11,000 years ago, approximately 9000 BCE. A historic
 
 The six values total about **3.565 million**. Asia combines the source table's Asia and CIS categories, while the Americas combine its Latin America and North America categories.
 
-These are **not census counts**. Deep-prehistory population estimates are highly uncertain. HYDE 3.2 independently places global population around 4.4 million in 10,000 BCE and reports a very wide uncertainty/scenario range. Every population field in the notebook is editable.
+These are **not census counts**. Deep-prehistory population estimates are highly uncertain. HYDE 3.2 independently places global population around 4.4 million in 10,000 BCE and reports a very wide uncertainty/scenario range. When auto-population mode is enabled, the notebook log-interpolates among 1000-year regional anchors to match the selected founder date; this interpolation is a visualization/modeling convenience, not additional evidence. Every population field remains editable.
 
 ### Migration and mixing defaults are deliberately not presented as historical estimates
 
