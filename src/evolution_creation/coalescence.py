@@ -441,3 +441,60 @@ def simulate_structured_pedigree_coalescence(
         community_sizes=sizes,
         parent_source_matrix=matrix,
     )
+
+
+def simulate_structured_coalescence_replicates(
+    community_sizes: Sequence[int],
+    parent_source_matrix: np.ndarray,
+    max_generations: int | None = None,
+    replicates: int = 100,
+    seed: int | None = None,
+) -> CoalescenceReplicateSummary:
+    """Repeat the structured pedigree simulation and collect MRCA/IAP times."""
+    if replicates < 1:
+        raise ValueError("replicates must be at least 1")
+
+    sizes = np.asarray(community_sizes, dtype=int)
+    if sizes.ndim != 1 or sizes.size < 2:
+        raise ValueError(
+            "community_sizes must contain at least two communities"
+        )
+    if np.any(sizes < 2):
+        raise ValueError(
+            "each community must contain at least 2 individuals"
+        )
+    total_population = int(sizes.sum())
+    if max_generations is None:
+        max_generations = int(
+            np.ceil(6.0 * np.log2(total_population) + 40)
+        )
+
+    master_rng = np.random.default_rng(seed)
+    child_seeds = master_rng.integers(
+        0,
+        np.iinfo(np.uint32).max,
+        size=replicates,
+    )
+    mrca = np.full(replicates, np.nan, dtype=float)
+    iap = np.full(replicates, np.nan, dtype=float)
+
+    for index, child_seed in enumerate(child_seeds):
+        result = simulate_structured_pedigree_coalescence(
+            community_sizes=sizes,
+            parent_source_matrix=parent_source_matrix,
+            max_generations=max_generations,
+            seed=int(child_seed),
+        )
+        if result.mrca_generation is not None:
+            mrca[index] = result.mrca_generation
+        if result.iap_generation is not None:
+            iap[index] = result.iap_generation
+
+    return CoalescenceReplicateSummary(
+        mrca_generations=mrca,
+        iap_generations=iap,
+        population_size=total_population,
+        max_generations=max_generations,
+        replicates=replicates,
+        seed=seed,
+    )
