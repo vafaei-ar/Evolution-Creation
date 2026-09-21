@@ -1529,3 +1529,512 @@ def deterministic_historical_genealogy(
         ),
         scenario=scenario,
     )
+
+
+
+@dataclass(frozen=True)
+class HistoricalPedigreeGenomeResult:
+    generations: np.ndarray
+    any_founder_fraction_by_region: np.ndarray
+    all_founders_fraction_by_region: np.ndarray
+    genetic_carrier_fraction_by_region: np.ndarray
+    detectable_carrier_fraction_by_region: np.ndarray
+    mean_founder_dna_fraction_by_region: np.ndarray
+    scenario: HistoricalScenario
+    detectable_threshold_cm: float
+    seed: int | None
+
+
+def simulate_historical_pedigree_genome(
+    scenario: HistoricalScenario,
+    max_generations: int | None = None,
+    chromosome_lengths_morgans: Sequence[float] | None = None,
+    detectable_threshold_cm: float = 6.0,
+    seed: int | None = None,
+    distinct_parents: bool = True,
+) -> HistoricalPedigreeGenomeResult:
+    """Jointly simulate founder genealogy and tagged autosomal DNA by region.
+
+    The long historical scenario can be computationally expensive with explicit
+    chromosomes. max_generations allows a shorter diagnostic run while keeping
+    the same historical parent-source schedule.
+    """
+    from .genetic_ancestry import (
+        balanced_autosome_map,
+        validate_chromosome_map,
+    )
+    from .pedigree_genome import (
+        _make_gamete,
+        _summarize_genomes,
+    )
+
+    if detectable_threshold_cm < 0:
+        raise ValueError(
+            "detectable_threshold_cm must be non-negative"
+        )
+
+    if max_generations is None:
+        generations_to_run = scenario.generations
+    else:
+        if not 0 <= max_generations <= scenario.generations:
+            raise ValueError(
+                "max_generations must lie within the scenario"
+            )
+        generations_to_run = int(
+            max_generations
+        )
+
+    if chromosome_lengths_morgans is None:
+        chromosome_lengths = balanced_autosome_map()
+    else:
+        chromosome_lengths = validate_chromosome_map(
+            chromosome_lengths_morgans
+        )
+
+    total_haploid = float(
+        chromosome_lengths.sum()
+    )
+    region_count = len(
+        scenario.region_names
+    )
+    founder_count = scenario.founder_count
+    full_mask = (
+        (1 << founder_count)
+        - 1
+    )
+    rng = np.random.default_rng(
+        seed
+    )
+
+    current_masks: list[np.ndarray] = []
+    current_genomes: list[list] = []
+
+    for region_index in range(
+        region_count
+    ):
+        n = int(
+            scenario.population_sizes[
+                0,
+                region_index,
+            ]
+        )
+        masks = np.zeros(
+            n,
+            dtype=object,
+        )
+        genomes: list = []
+
+        for person in range(
+            n
+        ):
+            is_founder = (
+                region_index
+                == scenario.founder_region
+                and person
+                < founder_count
+            )
+            if is_founder:
+                masks[
+                    person
+                ] = (
+                    1 << person
+                )
+                genome = [
+                    (
+                        [
+                            (
+                                0.0,
+                                float(
+                                    length
+                                ),
+                            )
+                        ],
+                        [
+                            (
+                                0.0,
+                                float(
+                                    length
+                                ),
+                            )
+                        ],
+                    )
+                    for length
+                    in chromosome_lengths
+                ]
+            else:
+                genome = [
+                    (
+                        [],
+                        [],
+                    )
+                    for _length
+                    in chromosome_lengths
+                ]
+            genomes.append(
+                genome
+            )
+
+        current_masks.append(
+            masks
+        )
+        current_genomes.append(
+            genomes
+        )
+
+    timepoints = (
+        generations_to_run
+        + 1
+    )
+    any_fraction = np.zeros(
+        (
+            timepoints,
+            region_count,
+        ),
+        dtype=float,
+    )
+    all_fraction = np.zeros(
+        (
+            timepoints,
+            region_count,
+        ),
+        dtype=float,
+    )
+    genetic_fraction = np.zeros(
+        (
+            timepoints,
+            region_count,
+        ),
+        dtype=float,
+    )
+    detectable_fraction = np.zeros(
+        (
+            timepoints,
+            region_count,
+        ),
+        dtype=float,
+    )
+    mean_dna_fraction = np.zeros(
+        (
+            timepoints,
+            region_count,
+        ),
+        dtype=float,
+    )
+
+    def record(
+        generation: int,
+    ) -> None:
+        for region_index in range(
+            region_count
+        ):
+            masks = current_masks[
+                region_index
+            ]
+            any_fraction[
+                generation,
+                region_index,
+            ] = float(
+                np.mean(
+                    masks != 0
+                )
+            )
+            all_fraction[
+                generation,
+                region_index,
+            ] = float(
+                np.mean(
+                    masks
+                    == full_mask
+                )
+            )
+            (
+                genetic,
+                detectable,
+                fractions,
+            ) = _summarize_genomes(
+                current_genomes[
+                    region_index
+                ],
+                total_haploid,
+                detectable_threshold_cm,
+            )
+            genetic_fraction[
+                generation,
+                region_index,
+            ] = float(
+                np.mean(
+                    genetic
+                )
+            )
+            detectable_fraction[
+                generation,
+                region_index,
+            ] = float(
+                np.mean(
+                    detectable
+                )
+            )
+            mean_dna_fraction[
+                generation,
+                region_index,
+            ] = float(
+                np.mean(
+                    fractions
+                )
+            )
+
+    record(
+        0
+    )
+
+    for generation in range(
+        1,
+        generations_to_run
+        + 1,
+    ):
+        matrix = (
+            scenario.parent_source_matrices[
+                generation
+                - 1
+            ]
+        )
+        previous_sizes = (
+            scenario.population_sizes[
+                generation
+                - 1
+            ]
+        )
+        next_sizes = (
+            scenario.population_sizes[
+                generation
+            ]
+        )
+
+        next_masks: list[
+            np.ndarray
+        ] = []
+        next_genomes: list[
+            list
+        ] = []
+
+        for child_region in range(
+            region_count
+        ):
+            child_count = int(
+                next_sizes[
+                    child_region
+                ]
+            )
+            source_a = rng.choice(
+                region_count,
+                size=child_count,
+                p=matrix[
+                    child_region
+                ],
+            )
+            source_b = rng.choice(
+                region_count,
+                size=child_count,
+                p=matrix[
+                    child_region
+                ],
+            )
+
+            children_masks = np.zeros(
+                child_count,
+                dtype=object,
+            )
+            children_genomes: list = []
+
+            for child in range(
+                child_count
+            ):
+                force_joint_founders = (
+                    generation == 1
+                    and founder_count == 2
+                    and child_region
+                    == scenario.founder_region
+                    and child
+                    < scenario.founder_pair_joint_children
+                )
+
+                if force_joint_founders:
+                    sa = scenario.founder_region
+                    sb = scenario.founder_region
+                    ia = 0
+                    ib = 1
+                else:
+                    sa = int(
+                        source_a[
+                            child
+                        ]
+                    )
+                    sb = int(
+                        source_b[
+                            child
+                        ]
+                    )
+                    ia = int(
+                        rng.integers(
+                            0,
+                            int(
+                                previous_sizes[
+                                    sa
+                                ]
+                            ),
+                        )
+                    )
+                    ib = int(
+                        rng.integers(
+                            0,
+                            int(
+                                previous_sizes[
+                                    sb
+                                ]
+                            ),
+                        )
+                    )
+                    if (
+                        distinct_parents
+                        and sa == sb
+                        and previous_sizes[
+                            sa
+                        ]
+                        > 1
+                    ):
+                        while ib == ia:
+                            ib = int(
+                                rng.integers(
+                                    0,
+                                    int(
+                                        previous_sizes[
+                                            sb
+                                        ]
+                                    ),
+                                )
+                            )
+
+                children_masks[
+                    child
+                ] = (
+                    int(
+                        current_masks[
+                            sa
+                        ][
+                            ia
+                        ]
+                    )
+                    | int(
+                        current_masks[
+                            sb
+                        ][
+                            ib
+                        ]
+                    )
+                )
+
+                parent_a = (
+                    current_genomes[
+                        sa
+                    ][
+                        ia
+                    ]
+                )
+                parent_b = (
+                    current_genomes[
+                        sb
+                    ][
+                        ib
+                    ]
+                )
+
+                child_genome = []
+                for (
+                    chromosome_index,
+                    chromosome_length,
+                ) in enumerate(
+                    chromosome_lengths
+                ):
+                    (
+                        a0,
+                        a1,
+                    ) = parent_a[
+                        chromosome_index
+                    ]
+                    (
+                        b0,
+                        b1,
+                    ) = parent_b[
+                        chromosome_index
+                    ]
+
+                    gamete_a = _make_gamete(
+                        a0,
+                        a1,
+                        float(
+                            chromosome_length
+                        ),
+                        rng,
+                    )
+                    gamete_b = _make_gamete(
+                        b0,
+                        b1,
+                        float(
+                            chromosome_length
+                        ),
+                        rng,
+                    )
+                    child_genome.append(
+                        (
+                            gamete_a,
+                            gamete_b,
+                        )
+                    )
+
+                children_genomes.append(
+                    child_genome
+                )
+
+            next_masks.append(
+                children_masks
+            )
+            next_genomes.append(
+                children_genomes
+            )
+
+        current_masks = (
+            next_masks
+        )
+        current_genomes = (
+            next_genomes
+        )
+        record(
+            generation
+        )
+
+    return HistoricalPedigreeGenomeResult(
+        generations=np.arange(
+            timepoints,
+            dtype=int,
+        ),
+        any_founder_fraction_by_region=(
+            any_fraction
+        ),
+        all_founders_fraction_by_region=(
+            all_fraction
+        ),
+        genetic_carrier_fraction_by_region=(
+            genetic_fraction
+        ),
+        detectable_carrier_fraction_by_region=(
+            detectable_fraction
+        ),
+        mean_founder_dna_fraction_by_region=(
+            mean_dna_fraction
+        ),
+        scenario=scenario,
+        detectable_threshold_cm=float(
+            detectable_threshold_cm
+        ),
+        seed=seed,
+    )
