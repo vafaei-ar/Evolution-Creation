@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="430" viewBox="0 0 950 430">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#111}.axis{stroke:#222;stroke-width:2}.tick{stroke:#666}</style>
+<text x="475" y="30" text-anchor="middle" font-size="22">Historical constraints around an 11,000-year founder date</text>
+<line class="axis" x1="120" y1="235" x2="880" y2="235"/>
+<line class="tick" x1="120.0" y1="229" x2="120.0" y2="241"/>
+<text x="120.0" y="262" text-anchor="middle" font-size="12">60 ka</text>
+<line class="tick" x1="246.7" y1="229" x2="246.7" y2="241"/>
+<text x="246.7" y="262" text-anchor="middle" font-size="12">50 ka</text>
+<line class="tick" x1="373.3" y1="229" x2="373.3" y2="241"/>
+<text x="373.3" y="262" text-anchor="middle" font-size="12">40 ka</text>
+<line class="tick" x1="500.0" y1="229" x2="500.0" y2="241"/>
+<text x="500.0" y="262" text-anchor="middle" font-size="12">30 ka</text>
+<line class="tick" x1="626.7" y1="229" x2="626.7" y2="241"/>
+<text x="626.7" y="262" text-anchor="middle" font-size="12">20 ka</text>
+<line class="tick" x1="753.3" y1="229" x2="753.3" y2="241"/>
+<text x="753.3" y="262" text-anchor="middle" font-size="12">10 ka</text>
+<line class="tick" x1="880.0" y1="229" x2="880.0" y2="241"/>
+<text x="880.0" y="262" text-anchor="middle" font-size="12">present</text>
+<line x1="221.3" y1="235" x2="221.3" y2="223.0" stroke="#1f77b4" stroke-width="2"/>
+<circle cx="221.3" cy="235" r="5" fill="#1f77b4"/>
+<text x="221.3" y="95" text-anchor="middle" font-size="13" font-weight="bold">Sahul settled</text>
+<text x="221.3" y="112" text-anchor="middle" font-size="11">conservative 47.5-55 ka range</text>
+<line x1="690.0" y1="235" x2="690.0" y2="223.0" stroke="#ff7f0e" stroke-width="2"/>
+<circle cx="690.0" cy="235" r="5" fill="#ff7f0e"/>
+<text x="690.0" y="135" text-anchor="middle" font-size="13" font-weight="bold">Americas occupied</text>
+<text x="690.0" y="152" text-anchor="middle" font-size="11">at least ~15 ka</text>
+<line x1="728.0" y1="235" x2="728.0" y2="223.0" stroke="#2ca02c" stroke-width="2"/>
+<circle cx="728.0" cy="235" r="5" fill="#2ca02c"/>
+<text x="728.0" y="175" text-anchor="middle" font-size="13" font-weight="bold">Tasmania separated</text>
+<text x="728.0" y="192" text-anchor="middle" font-size="11">Bassian land bridge ~12 ka</text>
+<line x1="740.7" y1="235" x2="740.7" y2="247.0" stroke="#d62728" stroke-width="2"/>
+<circle cx="740.7" cy="235" r="5" fill="#d62728"/>
+<text x="740.7" y="295" text-anchor="middle" font-size="13" font-weight="bold">Proposed founders</text>
+<text x="740.7" y="312" text-anchor="middle" font-size="11">debate: ~11 ka, West Asia</text>
+<line x1="877.2" y1="235" x2="877.2" y2="247.0" stroke="#9467bd" stroke-width="2"/>
+<circle cx="877.2" cy="235" r="5" fill="#9467bd"/>
+<text x="877.2" y="335" text-anchor="middle" font-size="13" font-weight="bold">Permanent European settlement</text>
+<text x="877.2" y="352" text-anchor="middle" font-size="11">Tasmania, 1803 CE</text>
+<line x1="880.0" y1="235" x2="880.0" y2="247.0" stroke="#8c564b" stroke-width="2"/>
+<circle cx="880.0" cy="235" r="5" fill="#8c564b"/>
+<text x="880.0" y="375" text-anchor="middle" font-size="13" font-weight="bold">Present</text>
+<text x="880.0" y="392" text-anchor="middle" font-size="11">2026 CE</text>
+<text x="475" y="417" text-anchor="middle" font-size="11">Dates are approximate constraints, not a complete demographic reconstruction. Archaeological BP conventions and calendar-year simplifications are not treated as exact equivalents.</text>
+</svg>

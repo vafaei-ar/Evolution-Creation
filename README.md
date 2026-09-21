@@ -322,6 +322,81 @@ Primary references:
 - S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
 - A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
 
+## Model 09: historically constrained founder scenarios
+
+Model 09 tests the debate's proposed **~11,000-year founder pair in West Asia** against time-dependent reproductive connectivity rather than against an unconstrained random-mating world.
+
+[![Open Model 09 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/09_historical_constraints.ipynb)
+
+### Historical ordering matters
+
+Sahul and the Americas were already populated long before 11 ka. Tasmania is especially important because archaeological syntheses place final Bassian land-bridge submergence around 12 ka, close to and under the default chronology **before** an 11 ka founder insertion.
+
+![Historical constraints timeline](figures/model09_historical_timeline.svg)
+
+This means an 11 ka date does not automatically place the founders before Tasmanian isolation. The model therefore exposes the isolation date as a parameter.
+
+### Two-founder regional genealogy
+
+The default pedagogical scenario converts 11,000 years into 440 generations at 25 years per generation. It tracks founder A and founder B separately and can force a chosen number of first-generation joint children.
+
+![Regional two-founder trajectory](figures/model09_regional_trajectory.svg)
+
+The non-Tasmanian cross-region rates in this plot are **sensitivity parameters, not empirical migration estimates**. In the default setup, Tasmania remains at zero founder ancestry until the late-contact window opens.
+
+A zero reproductive path is a hard result: founder ancestry cannot enter that population. A positive path establishes only possibility, not probability.
+
+### How much can late contact change?
+
+To isolate the late-contact question, the next calculation deliberately favors the founder scenario: the external parent pool is assumed already 100% descended from both founders.
+
+For a formerly isolated deme,
+
+```math
+f_{t+1}
+=
+1-
+\left[(1-m)(1-f_t)\right]^2,
+```
+
+where (m) is the external-parent probability per parental draw.
+
+![Late-contact sensitivity](figures/model09_late_contact_sensitivity.svg)
+
+With nine generations, a finite (N=100) simulation gives about:
+
+- 0.1% external parents: 5.6% probability of complete fixation
+- 0.5%: 41.5%
+- 1%: 79.2%
+- 2%: 98.6%
+
+These values come from 5,000 Monte Carlo replicates and are **not historical estimates**.
+
+### Animated late-contact window
+
+![Late-contact animation](figures/model09_late_contact_animation.svg)
+
+The key transition is conceptual: long isolation makes ancestry entry impossible while the barrier is closed; once it reopens, the question becomes how much effective reproductive mixing occurred during the remaining generations.
+
+### Endogamy, bottlenecks, and chromosomes
+
+Model 09 also includes:
+
+- an endogamy parameter that scales cross-region parent-source probabilities toward zero;
+- a region-specific bottleneck helper for demographic sensitivity;
+- a finite stochastic two-founder simulation;
+- an optional structured pedigree + chromosome diagnostic using the Model 08 recombination engine.
+
+The chromosome mode confirms the same topological rule: if no reproductive path exists, neither genealogy nor founder DNA can enter.
+
+Primary external constraints used in the documentation:
+
+- Sandra Bowdler (2015), *The Bass Strait Islands revisited*, Quaternary International 385, 206-218.
+- Fuller et al. (2023), *The archaeology of orality: Dating Tasmanian Aboriginal oral traditions to the Late Pleistocene*, Journal of Archaeological Science.
+- Malaspinas et al. (2016), *A genomic history of Aboriginal Australia*, Nature 538, 207-214.
+- Willerslev & Meltzer (2021), *Peopling of the Americas as inferred from ancient genomics*, Nature 594, 356-364.
+- National Museum of Australia material on Tasmania's separation and permanent British settlement beginning in 1803.
+
 ## Repository structure
 
 ~~~text
@@ -346,6 +421,7 @@ python scripts/generate_model05_outputs.py
 python scripts/generate_model06_outputs.py
 python scripts/generate_model07_outputs.py
 python scripts/generate_model08_outputs.py
+python scripts/generate_model09_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -358,7 +434,8 @@ python scripts/generate_model08_outputs.py
 6. Genealogical MRCA and identical-ancestors behavior: implemented
 7. Chromosomes, recombination, and loss of detectable founder DNA: implemented
 8. Population-scale pedigree + chromosome integration: implemented
-9. Historically constrained migration, isolation, demography, and founder scenarios
+9. Historically constrained migration, isolation, endogamy, demography, and founder scenarios: implemented
+10. Calibrated empirical scenarios with literature-derived migration/demography priors
 
 ## Interpretation rule
 
