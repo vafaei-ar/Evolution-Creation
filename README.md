@@ -397,6 +397,86 @@ Primary external constraints used in the documentation:
 - Willerslev & Meltzer (2021), *Peopling of the Americas as inferred from ancient genomics*, Nature 594, 356-364.
 - National Museum of Australia material on Tasmania's separation and permanent British settlement beginning in 1803.
 
+## Model 10: evidence-calibrated uncertainty envelopes
+
+Model 10 asks a stricter question than Model 09: **which numerical inputs are actually supported by published evidence, and which decisive inputs remain unknown?**
+
+[![Open Model 10 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/10_evidence_calibration.ipynb)
+
+A machine-readable evidence ledger is stored in `data/model10_evidence.json`. Every input is labeled as a debate assumption, direct quantitative evidence, published scenario-model output, historical date, qualitative constraint, or currently unconstrained parameter.
+
+### Evidence changes the generation count
+
+Published ancient-DNA estimates support a mean human generation interval around 26-30 years over the relevant timescale. An 11,000-year founder date therefore corresponds to roughly **367-423 generations**, rather than automatically using 440 generations from a 25-year convention.
+
+### The direct Tasmania closure bracket gives no pre-closure window
+
+The sea-level bracket used in Model 10 places the last continuous Bassian land bridge at approximately **11,960-12,890 years BP**.
+
+![Isolation chronology](figures/model10_isolation_window.svg)
+
+For a founder appearing outside Tasmania at 11 ka, the entire direct bracket places geographic closure before founder insertion. Under the 26-30 year generation interval, founder insertion occurs roughly **32-73 generations after** that closure bracket.
+
+Broader historical estimates remain available for sensitivity analysis, but they are not mixed into the direct bracket without being labeled separately.
+
+### The decisive rate is not directly measured
+
+Let (m) be the probability that a parental draw inside the formerly isolated population comes from an external population already descended from both founders.
+
+The literature used for Model 10 does **not** provide a defensible Tasmania-specific per-generation estimate of (m). Contact, migration, settlement, intermarriage, and genomic admixture are not interchangeable measurements.
+
+Model 10 therefore solves for the rate that would be required instead of inventing an empirical prior.
+
+### Required post-contact mixing
+
+Using the published set of contact-era Tasmania population-model outputs, the analytic independence approximation gives:
+
+| Post-contact generations | Complete-fixation target | Required external-parent probability |
+| ---: | ---: | ---: |
+| 8 | 50% | 1.68-1.90% per parental draw |
+| 8 | 95% | 2.18-2.40% |
+| 9 | 50% | 0.84-0.95% |
+| 9 | 95% | 1.09-1.20% |
+
+![Required mixing threshold](figures/model10_required_rate_envelope.svg)
+
+Finite-population Monte Carlo checks are included in the notebook. They are close to the analytic 50% thresholds and somewhat higher for the 95% target because pedigree states are correlated.
+
+### Evidence-envelope propagation
+
+The default envelope propagates a 26-30 year generation interval, the 11,960-12,890 BP land-bridge bracket, the nine published contact-era population outputs, an 11 ka debate founder date, and a 1797 contact marker.
+
+![Evidence envelope](figures/model10_uncertainty_envelope.svg)
+
+Uniform sampling within published numerical intervals and equal weighting of published population-model outputs are **Model 10 propagation conventions, not posterior distributions supplied by the papers**.
+
+The threshold distribution is strongly split between 8-generation and 9-generation contact windows. One extra generation has a large effect:
+
+![Threshold animation](figures/model10_threshold_animation.svg)
+
+### Demographic-collapse sensitivity
+
+The early-contact period involved severe population decline. Model 10 therefore compares a constant population with a deliberately simplified bottleneck trajectory.
+
+![Bottleneck sensitivity](figures/model10_bottleneck_sensitivity.svg)
+
+The bottleneck can materially lower the mixing rate required for genealogical fixation in the toy model. This is **sensitivity only**, because historical survival, movement, and reproduction were not ancestry-neutral random processes.
+
+### What Model 10 establishes
+
+It identifies the chronology supported by the direct evidence envelope, propagates published uncertainty, and calculates the post-contact reproductive mixing that would be required under explicitly favorable assumptions.
+
+It does **not** provide a posterior probability that the proposed founders became universal ancestors. The critical Tasmania-specific reproductive-mixing rate remains unmeasured by the evidence reviewed here.
+
+Primary references:
+
+- P. Moorjani et al. (2016), *A genetic method for dating ancient genomes provides a direct estimate of human generation interval in the last 45,000 years*, PNAS 113, 5652-5657.
+- R. J. Wang et al. (2023), *Human generation times across the past 250,000 years*, Science Advances 9, eabm7047.
+- R. S. Fuller et al. (2023), *The archaeology of orality: Dating Tasmanian Aboriginal oral traditions to the Late Pleistocene*, Journal of Archaeological Science.
+- R. Byard and H. Maxwell-Stewart (2024), *Estimating early contact-era populations for lutruwita (Tasmania)*, Asia-Pacific Economic History Review 64, 72-93.
+- A.-S. Malaspinas et al. (2016), *A genomic history of Aboriginal Australia*, Nature 538, 207-214.
+- E. Willerslev and D. J. Meltzer (2021), *Peopling of the Americas as inferred from ancient genomics*, Nature 594, 356-364.
+
 ## Repository structure
 
 ~~~text
@@ -422,6 +502,7 @@ python scripts/generate_model06_outputs.py
 python scripts/generate_model07_outputs.py
 python scripts/generate_model08_outputs.py
 python scripts/generate_model09_outputs.py
+python scripts/generate_model10_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -435,7 +516,8 @@ python scripts/generate_model09_outputs.py
 7. Chromosomes, recombination, and loss of detectable founder DNA: implemented
 8. Population-scale pedigree + chromosome integration: implemented
 9. Historically constrained migration, isolation, endogamy, demography, and founder scenarios: implemented
-10. Calibrated empirical scenarios with literature-derived migration/demography priors
+10. Evidence-calibrated chronology, population uncertainty, and required mixing thresholds: implemented
+11. Local ancient-genome/admixture calibration where defensible
 
 ## Interpretation rule
 
