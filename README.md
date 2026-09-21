@@ -4,7 +4,7 @@ A reproducible Python project for testing quantitative claims raised in a debate
 
 **Debate source:** [Evolution and Creation debate on YouTube](https://www.youtube.com/watch?v=hsJ-zLVn0H0)
 
-The **Claim from the debate** statements below are concise paraphrases, not verbatim quotations. Each model now includes a **Speaker attribution** line based on the transcript. Where a model combines a claim and an objection, or synthesizes several exchanges, that is stated explicitly rather than assigning the synthesized sentence to one speaker. The **Judgment on the claim** sections distinguish mathematical possibility, model-dependent probability, and historically supported inference.
+The **Claim from the debate** statements below are concise paraphrases, not verbatim quotations. Each model now includes a **Speaker attribution** line based on the transcript. A machine-readable audit is available in [`data/debate_claim_attribution.json`](data/debate_claim_attribution.json). Where a model combines a claim and an objection, or synthesizes several exchanges, that is stated explicitly rather than assigning the synthesized sentence to one speaker. The **Judgment on the claim** sections distinguish mathematical possibility, model-dependent probability, and historically supported inference.
 
 
 The project does **not** assume that a theological or historical claim is true. Each model is framed conditionally:
