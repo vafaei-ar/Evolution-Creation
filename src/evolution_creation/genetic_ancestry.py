@@ -476,3 +476,84 @@ def simulate_path_replicates(
         ),
         seed=seed,
     )
+
+
+
+@dataclass(frozen=True)
+class GeneticSegmentHistory:
+    generations: np.ndarray
+    segments_by_generation: tuple[
+        tuple[tuple[tuple[float, float], ...], ...], ...
+    ]
+    chromosome_lengths_morgans: np.ndarray
+    seed: int | None
+
+
+def _freeze_segments(
+    tagged_by_chromosome: list[list[tuple[float, float]]],
+) -> tuple[tuple[tuple[float, float], ...], ...]:
+    return tuple(
+        tuple(
+            (float(start), float(end))
+            for start, end in chromosome
+        )
+        for chromosome in tagged_by_chromosome
+    )
+
+
+def simulate_segment_history(
+    max_generations: int = 20,
+    chromosome_lengths_morgans: Sequence[float] | None = None,
+    seed: int | None = None,
+) -> GeneticSegmentHistory:
+    """Return founder-derived chromosome intervals along one lineage path."""
+    if max_generations < 1:
+        raise ValueError(
+            "max_generations must be at least 1"
+        )
+
+    if chromosome_lengths_morgans is None:
+        lengths = balanced_autosome_map()
+    else:
+        lengths = validate_chromosome_map(
+            chromosome_lengths_morgans
+        )
+
+    rng = np.random.default_rng(seed)
+    tagged: list[list[tuple[float, float]]] = [
+        [(0.0, float(length))]
+        for length in lengths
+    ]
+    history = [
+        _freeze_segments(tagged)
+    ]
+
+    for _generation in range(
+        2,
+        max_generations + 1,
+    ):
+        tagged = [
+            _recombine_tagged_with_clean(
+                chromosome,
+                float(length),
+                rng,
+            )
+            for chromosome, length
+            in zip(tagged, lengths)
+        ]
+        history.append(
+            _freeze_segments(tagged)
+        )
+
+    return GeneticSegmentHistory(
+        generations=np.arange(
+            1,
+            max_generations + 1,
+            dtype=int,
+        ),
+        segments_by_generation=tuple(
+            history
+        ),
+        chromosome_lengths_morgans=lengths,
+        seed=seed,
+    )
