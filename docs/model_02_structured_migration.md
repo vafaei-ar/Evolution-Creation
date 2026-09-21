@@ -8,7 +8,7 @@ This is the first model that can represent the central migration objection in th
 
 ## State variables
 
-The population is divided into demes. Deme (i) has fixed size (N_i).
+The population is divided into demes. Deme $i$ has fixed size $N_i$.
 
 For each person we track only a Boolean genealogical state:
 
@@ -19,9 +19,9 @@ This is still a genealogy model, not a genetic model.
 
 ## Migration matrix
 
-The model uses a row-stochastic matrix (M).
+The model uses a row-stochastic matrix $M$.
 
-(M_{ij}) is the probability that a parent of a child born in destination deme (i) is sampled from source deme (j).
+$M_{ij}$ is the probability that a parent of a child born in destination deme $i$ is sampled from source deme $j$.
 
 Every row sums to one.
 
@@ -35,7 +35,7 @@ The helper function creates nearest-neighbor mixing:
 Deme 1 <-> Deme 2 <-> Deme 3 <-> Deme 4 <-> Deme 5
 ~~~
 
-For interior demes, total migration probability (m) is split equally between the left and right neighbors.
+For interior demes, total migration probability $m$ is split equally between the left and right neighbors.
 
 ## Hard barrier
 
@@ -65,9 +65,9 @@ The model reports:
 
 The repository includes a generated heatmap of:
 
-[
-P(	ext{global genealogical fixation by generation } t)
-]
+$$
+P(\text{global genealogical fixation by generation } t)
+$$
 
 over migration rate and elapsed generations.
 
