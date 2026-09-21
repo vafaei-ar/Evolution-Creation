@@ -708,6 +708,47 @@ With an illustrative 1% per-marker probability of surviving and being sampled, t
 
 **What must be corrected for the claim to be scientifically testable:** specify the predicted genetic difference between the pair and contemporaneous humans, effective population structure, reproductive success, selection on distinctive alleles, and the sampling/detection criterion. Without a predicted genetic difference, non-detection is not positive evidence for the event.
 
+## Model 14: agency inference from artifacts versus cosmic fine-tuning
+
+### Claim from the debate
+
+The debate argues that patterned stone tools justify an inference to **agency**, and then extends that reasoning to cosmic order, regularity, and fine-tuning: if archaeologists reject a random natural origin for carefully modified stones, analogous patterns in the universe may support a cosmic agency inference.
+
+### Result
+
+Model 14 writes both arguments in the same Bayesian form:
+
+```math
+\text{posterior odds}
+=
+\text{prior odds}
+\times
+\frac{P(E\mid H_1)}{P(E\mid H_0)}.
+```
+
+That establishes a genuine logical analogy. But it does **not** establish equal evidential strength.
+
+Archaeological artifact classification can be experimentally calibrated. Candidate flakes can be compared with known human-knapped material, natural geofacts, fracture experiments, microwear, and site context. The resulting inference can therefore have empirically estimable false-positive and true-positive behavior.
+
+For illustration only, a synthetic classifier with 95% true-positive and 1% false-positive rates has likelihood ratio 95. Even then, a 1% prior becomes only about **49% posterior**, whereas a 10% prior becomes about **91%**.
+
+![Bayesian agency sensitivity](figures/model14_bayesian_sensitivity.svg)
+
+Fine-tuning arguments can also be represented with likelihoods and priors, but there is no experimental ensemble of created and uncreated universes from which those quantities can be calibrated. The contemporary philosophical literature also disputes the relevant probability measures, design likelihood, alternative hypotheses, and observer-selection effects.
+
+### Judgment on the claim
+
+**The analogy is valid at the level of probabilistic logic, but it does not transfer the calibrated strength of an archaeological agency inference to cosmology.** Evidence supports agency when the observed pattern is demonstrably more expected under agency than under specified alternatives.
+
+For stone artifacts, experimental controls can help estimate that comparison. For cosmic fine-tuning, the key probabilities remain model- and philosophy-dependent. Therefore the stronger claim that fine-tuning makes agency scientifically unavoidable is **not established by the stone-tool analogy alone**.
+
+**What would need to be specified for a quantitative fine-tuning claim:** the competing hypotheses; a measure over physical possibilities; (P(E\mid\text{design})); (P(E\mid\text{non-design alternatives})); observer-selection effects; prior odds or a prior-robust argument; and sensitivity to new-physics and multiverse alternatives.
+
+Primary references:
+
+- Lubinski, Terry & McCutcheon (2014), *Comparative methods for distinguishing flakes from geofacts*, Journal of Archaeological Science 52:308-320.
+- Stanford Encyclopedia of Philosophy, *Fine-Tuning*, substantive revision 2026.
+
 ## Repository structure
 
 ~~~text
@@ -737,6 +778,7 @@ python scripts/generate_model10_outputs.py
 python scripts/generate_model11_outputs.py
 python scripts/generate_model12_outputs.py
 python scripts/generate_model13_outputs.py
+python scripts/generate_model14_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -754,7 +796,7 @@ python scripts/generate_model13_outputs.py
 11. Genetic admixture versus genealogical spread: implemented
 12. Domestication timing versus biological species appearance: implemented
 13. Population-genetic detectability of a specially inserted pair: implemented
-14. Agency inference: artifacts versus fine-tuning
+14. Agency inference: artifacts versus fine-tuning: implemented
 15. Evolution of cooperation, punishment, conformity, and moral behavior
 
 ## Interpretation rule
