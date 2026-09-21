@@ -56,6 +56,40 @@ The generated SVG below animates one stochastic run across seven demes.
 
 Model 02 also has a hard-barrier control. A permanent barrier makes the migration matrix block-disconnected. If the founder starts on one side, ancestry cannot reach the other side regardless of how many generations pass.
 
+## Model 03: time-varying connectivity
+
+Model 03 allows migration barriers to appear or disappear over time.
+
+[![Open Model 03 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/03_time_varying_connectivity.ipynb)
+
+This distinction is important:
+
+- a population isolated from the start cannot receive founder ancestry across the barrier;
+- a population that becomes isolated later may already contain that ancestry;
+- reopening a route can restart spread after a period of isolation.
+
+### When does isolation begin?
+
+The figure below varies the generation when a permanent barrier appears. The final-generation fixation probability changes strongly with both migration rate and barrier timing.
+
+![Barrier closure timing](figures/model03_closure_timing.svg)
+
+These are small illustrative simulations. The plotted probabilities include Monte Carlo error and are not historical estimates.
+
+### Same barrier, different histories
+
+The barrier in these scenarios is between Deme 3 and Deme 4.
+
+![Time-varying barrier scenarios](figures/model03_scenario_heatmap.svg)
+
+A barrier present from generation 1 keeps the right component free of founder ancestry. Closing the same barrier later can give a completely different result because ancestry may already have crossed.
+
+### Animation: isolation after ancestry crosses
+
+In this run, the barrier closes at generation 20. Founder ancestry has already entered Deme 4. After isolation, ancestry continues spreading inside the now-separated right component.
+
+![Time-varying barrier animation](figures/model03_barrier_animation.svg)
+
 ## Repository structure
 
 ~~~text
@@ -74,13 +108,14 @@ python -m pip install -e ".[dev]"
 pytest
 python scripts/generate_figures.py
 python scripts/generate_model02_outputs.py
+python scripts/generate_model03_outputs.py
 ~~~
 
 ## Modeling roadmap
 
 1. Founder ancestry in a single panmictic population: implemented
 2. Multiple demes, migration, and fixed barriers: implemented
-3. Time-varying barriers and historically changing connectivity
+3. Time-varying barriers and historically changing connectivity: implemented
 4. Time-varying population size and carrying capacity
 5. Endogamy and assortative mating
 6. Genealogical MRCA and identical-ancestors behavior
