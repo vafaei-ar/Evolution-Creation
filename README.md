@@ -270,6 +270,58 @@ Primary references:
 - S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
 - A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
 
+## Model 08: integrated pedigree + autosomal founder DNA
+
+Model 08 finally places genealogy and chromosome inheritance inside the **same finite population**.
+
+For multiple founders, genealogy is tracked separately for each founder. Autosomal segments are tagged collectively as DNA from the founder set.
+
+[![Open Model 08 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/08_pedigree_genome.ipynb)
+
+### Genealogical universality is not genetic universality
+
+The representative run below uses a constant panmictic population of 500, two founders, distinct parents, a 6 cM illustrative threshold, and seed 3.
+
+![Integrated pedigree and genome trajectory](figures/model08_joint_trajectory.svg)
+
+In this run, **both founders become genealogical ancestors of everyone at generation 13**. At that same generation, only 84.4% of the population carries any autosomal DNA from the founder set and 60.8% carries a founder-derived segment at least 6 cM long.
+
+Those percentages are properties of this stochastic toy run, not estimates for real human history.
+
+### What exists inside a universally descended population?
+
+Once both founders are universal genealogically, individuals can still differ genetically.
+
+![Genetic categories after genealogical universality](figures/model08_universal_categories.svg)
+
+At generation 13 of the example, 15.6% of the population is descended from both founders but carries no tagged autosomal DNA from either founder; 23.6% carries founder DNA only in segments below 6 cM; and 60.8% carries at least one segment at or above 6 cM.
+
+Later generations do **not** simply show monotonic loss of founder DNA from every person. Because the founders reach individuals through many pedigree paths, tagged DNA can be redistributed to additional descendants even while recombination breaks it into smaller pieces.
+
+### Animated joint state
+
+![Integrated genealogy-genetics animation](figures/model08_category_animation.svg)
+
+Gray is the fraction not yet descended from both founders. Once that disappears, the entire population is genealogically descended from both founders, but genetic status still ranges from no founder DNA to sub-threshold or larger segments.
+
+### Why this differs from the single-path model
+
+Model 07 followed one specified ancestor-descendant path. Model 08 allows the same founder to reach a descendant through many pedigree paths.
+
+The population-wide mean founder-DNA fraction is therefore a different quantity from the single-path expectation 2^-k. Under neutral Mendelian transmission its replicate-ensemble expectation is conserved, although any finite run can drift.
+
+The model also distinguishes **descent from at least one founder** from the stronger condition **descent from every founder**. A founder lineage can disappear by chance before becoming universal.
+
+The current genetic tag is collective: carrying founder DNA means carrying DNA from at least one member of the founder set. The model does not yet distinguish surviving DNA from founder 1 versus founder 2.
+
+A complete population-level ghost event is recorded only if all founders are genealogically universal and all tagged founder-set autosomal DNA has disappeared from the population. Such an event is possible but is not guaranteed for a designated founder pair.
+
+Primary references:
+
+- L. Agranat-Tamir, J. A. Mooney, and N. A. Rosenberg (2024), Counting the genetic ancestors from source populations in members of an admixed population, Genetics 226(4), iyae011. https://doi.org/10.1093/genetics/iyae011
+- S. Gravel and M. Steel (2015), The existence and abundance of ghost ancestors in biparental populations, Theoretical Population Biology 101, 47-53. https://doi.org/10.1016/j.tpb.2015.02.002
+- A. Kong et al. (2010), Fine-scale recombination rate differences between sexes, populations and individuals, Nature 467, 1099-1103. https://doi.org/10.1038/nature09525
+
 ## Repository structure
 
 ~~~text
@@ -293,6 +345,7 @@ python scripts/generate_model04_outputs.py
 python scripts/generate_model05_outputs.py
 python scripts/generate_model06_outputs.py
 python scripts/generate_model07_outputs.py
+python scripts/generate_model08_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -304,7 +357,8 @@ python scripts/generate_model07_outputs.py
 5. Endogamy and assortative mating: implemented
 6. Genealogical MRCA and identical-ancestors behavior: implemented
 7. Chromosomes, recombination, and loss of detectable founder DNA: implemented
-8. Population-scale pedigree + chromosome integration and historically constrained scenarios
+8. Population-scale pedigree + chromosome integration: implemented
+9. Historically constrained migration, isolation, demography, and founder scenarios
 
 ## Interpretation rule
 
