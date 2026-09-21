@@ -547,9 +547,9 @@ Broader historical estimates remain available for sensitivity analysis, but they
 
 ### The decisive rate is not directly measured
 
-Let (m) be the probability that a parental draw inside the formerly isolated population comes from an external population already descended from both founders.
+Let $m$ be the probability that a parental draw inside the formerly isolated population comes from an external population already descended from both founders.
 
-The literature used for Model 10 does **not** provide a defensible Tasmania-specific per-generation estimate of (m). Contact, migration, settlement, intermarriage, and genomic admixture are not interchangeable measurements.
+The literature used for Model 10 does **not** provide a defensible Tasmania-specific per-generation estimate of $m$. Contact, migration, settlement, intermarriage, and genomic admixture are not interchangeable measurements.
 
 Model 10 therefore solves for the rate that would be required instead of inventing an empirical prior.
 
