@@ -90,6 +90,42 @@ In this run, the barrier closes at generation 20. Founder ancestry has already e
 
 ![Time-varying barrier animation](figures/model03_barrier_animation.svg)
 
+## Model 04: population growth, carrying capacity, and overlapping ancestry
+
+Model 04 addresses a common intuition trap: treating "descendants of the founder" and "descendants of everyone else" as two disjoint populations that each grow exponentially.
+
+After intermarriage, those descendant sets overlap. A person can be descended from both the founder and members of the original background population.
+
+[![Open Model 04 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/04_demography_carrying_capacity.ipynb)
+
+Under neutral random mating,
+
+$
+f_{t+1}=1-(1-f_t)^2
+$
+
+still governs the expected founder-descendant fraction even when total population size changes. Demography changes absolute descendant counts and finite-population extinction risk, but not this infinite-population neutral fraction recurrence.
+
+### Growth and carrying capacity
+
+The upper panel below compares constant, exponential, and logistic population-size schedules. The lower panel shows the same expected genealogical ancestry fraction for all three because they begin with the same founder fraction.
+
+![Demography versus ancestry fraction](figures/model04_demography_vs_fraction.svg)
+
+### Why two exponential lineages are the wrong picture
+
+The next figure separately tracks descendants of the founder group, descendants of the original background group, and people descended from both.
+
+![Overlapping descendant sets](figures/model04_overlapping_descendants.svg)
+
+Once intermarriage occurs, "founder descendants" and "background descendants" are overlapping sets, not mutually exclusive clans.
+
+### Animated overlap
+
+![Animated overlapping descendant sets](figures/model04_overlap_animation.svg)
+
+The notebook also lets you introduce logistic carrying capacity, temporary bottlenecks, and a relative reproductive-weight sensitivity parameter. These are conceptual experiments, not estimates of prehistoric demography.
+
 ## Repository structure
 
 ~~~text
@@ -109,6 +145,7 @@ pytest
 python scripts/generate_figures.py
 python scripts/generate_model02_outputs.py
 python scripts/generate_model03_outputs.py
+python scripts/generate_model04_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -116,7 +153,7 @@ python scripts/generate_model03_outputs.py
 1. Founder ancestry in a single panmictic population: implemented
 2. Multiple demes, migration, and fixed barriers: implemented
 3. Time-varying barriers and historically changing connectivity: implemented
-4. Time-varying population size and carrying capacity
+4. Time-varying population size, carrying capacity, bottlenecks, and overlapping ancestry: implemented
 5. Endogamy and assortative mating
 6. Genealogical MRCA and identical-ancestors behavior
 7. Chromosomes, recombination, and loss of detectable founder DNA
