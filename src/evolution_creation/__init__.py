@@ -1,5 +1,13 @@
 """Computational models for the Evolution-Creation project."""
 
+from .assortment import (
+    EndogamySpreadResult,
+    deterministic_endogamy_curve,
+    make_endogamy_matrix,
+    probability_all_communities_reached,
+    simulate_endogamy_founder_spread,
+    simulate_endogamy_replicates,
+)
 from .demography import (
     DemographicSpreadResult,
     OverlapSpreadResult,
@@ -34,6 +42,7 @@ from .temporal import (
 
 __all__ = [
     "DemographicSpreadResult",
+    "EndogamySpreadResult",
     "FounderSpreadResult",
     "OverlapSpreadResult",
     "StructuredSpreadResult",
@@ -43,16 +52,21 @@ __all__ = [
     "constant_population_schedule",
     "deterministic_ancestry_fraction_curve",
     "deterministic_descendant_counts",
+    "deterministic_endogamy_curve",
     "deterministic_overlapping_ancestry_fractions",
     "exponential_population_schedule",
     "logistic_population_schedule",
     "make_barrier_schedule",
     "make_constant_schedule",
+    "make_endogamy_matrix",
     "make_linear_migration_matrix",
+    "probability_all_communities_reached",
     "probability_of_global_fixation",
     "probability_of_global_fixation_by_barrier_timing",
     "simulate_demographic_founder_spread",
     "simulate_demographic_replicates",
+    "simulate_endogamy_founder_spread",
+    "simulate_endogamy_replicates",
     "simulate_founder_spread",
     "simulate_overlapping_ancestry_sets",
     "simulate_replicates",
