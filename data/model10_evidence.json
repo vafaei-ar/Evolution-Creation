@@ -1,0 +1,106 @@
+{
+  "model": 10,
+  "interpretation": "Evidence envelope and threshold analysis; not a Bayesian posterior.",
+  "parameters": {
+    "founder_age_years": {
+      "default": 11000,
+      "status": "debate assumption",
+      "source": "The debate transcript"
+    },
+    "generation_interval_years": {
+      "default_envelope": [
+        26,
+        30
+      ],
+      "status": "direct quantitative evidence",
+      "sources": [
+        {
+          "citation": "Moorjani et al. 2016, PNAS",
+          "doi": "10.1073/pnas.1514696113",
+          "finding": "mean generation interval 26-30 years over the last 45,000 years"
+        },
+        {
+          "citation": "Wang et al. 2023, Science Advances",
+          "doi": "10.1126/sciadv.abm7047",
+          "finding": "average 26.9 years across the past 250,000 years"
+        }
+      ],
+      "sampling_note": "Uniform sampling within 26-30 years is a Model 10 propagation convention, not a posterior supplied by either paper."
+    },
+    "tasmania_land_bridge_submergence_years_bp": {
+      "default_envelope": [
+        11960,
+        12890
+      ],
+      "status": "direct geochronological bracket",
+      "source": {
+        "citation": "Fuller et al. 2023, Journal of Archaeological Science",
+        "doi": "10.1016/j.jas.2023.105819",
+        "finding": "-56.5 m sea level bracket 11,960-12,890 BP for the last continuous Bassian land bridge"
+      },
+      "sampling_note": "Uniform sampling within the bracket is a Model 10 propagation convention, not a posterior from the paper."
+    },
+    "tasmania_precontact_population": {
+      "published_model_set": [
+        3848,
+        4232,
+        4616,
+        6789,
+        7465,
+        8144,
+        10093,
+        11099,
+        12106
+      ],
+      "status": "published scenario-model outputs",
+      "source": {
+        "citation": "Byard & Maxwell-Stewart 2024, Asia-Pacific Economic History Review",
+        "doi": "10.1111/aehr.12282"
+      },
+      "sampling_note": "Equal weighting of these outputs is an uncertainty-envelope convention, not a probability assigned by the authors."
+    },
+    "contact_start_year": {
+      "values": [
+        1797,
+        1803
+      ],
+      "status": "historical dates",
+      "source": {
+        "citation": "Byard & Maxwell-Stewart 2024",
+        "note": "sealing crews occupied offshore islands in 1797; official British settlement followed in 1803"
+      }
+    },
+    "palawa_survivors_1831": {
+      "documented_minimum": 311,
+      "undercount_sensitivity_values": [
+        342,
+        373
+      ],
+      "status": "minimum count plus paper sensitivity adjustments",
+      "source": {
+        "citation": "Byard & Maxwell-Stewart 2024"
+      }
+    },
+    "external_parent_probability": {
+      "default": null,
+      "status": "not directly numerically constrained by the sources reviewed for Model 10",
+      "rule": "solve for required rates or let the user supply a scenario distribution; do not label a chosen rate as empirical"
+    }
+  },
+  "qualitative_constraints": {
+    "sahul": {
+      "status": "strong qualitative demographic constraint",
+      "finding": "occupied tens of thousands of years before 11 ka; later Australian population structure is strong",
+      "sources": [
+        "Malaspinas et al. 2016, Nature, doi:10.1038/nature18299",
+        "Tobler et al. 2017, Nature, doi:10.1038/nature21416",
+        "Indigenous Australian genomes show deep structure and rich novel variation, Nature 2023, doi:10.1038/s41586-023-06831-w"
+      ]
+    },
+    "americas": {
+      "status": "strong qualitative demographic constraint",
+      "finding": "population history predates 11 ka and includes substantial regional structure, isolation, admixture, continuity, and replacement",
+      "source": "Willerslev & Meltzer 2021, Nature, doi:10.1038/s41586-021-03499-y"
+    }
+  }
+}
