@@ -152,6 +152,62 @@ The vertical axis is an abstract same-state mate-choice weight. It is included a
 
 The model distinguishes **perfect isolation** from **rare bridging marriages**. A single cross-community genealogical bridge can seed ancestry inside an otherwise highly endogamous community, after which within-community reproduction can propagate it.
 
+## Model 06: genealogical MRCA and the Identical Ancestors Point
+
+Model 06 traces complete two-parent pedigrees **backward** from the present generation.
+
+- The genealogical **MRCA** is the first past generation containing at least one person who is an ancestor of everyone in the present population.
+- The **Identical Ancestors Point (IAP)** is farther back: every person in that generation who has any present-day descendants is an ancestor of everyone in the present population.
+
+The IAP is a time threshold, not a single ancestor.
+
+[![Open Model 06 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/06_mrca_iap.ipynb)
+
+### Exact finite pedigree
+
+Each past individual is classified as having no present descendants, being a partial ancestor, or being a universal ancestor. The first universal ancestor marks the MRCA; the disappearance of all partial ancestors marks the IAP.
+
+![Exact MRCA and IAP trajectory](figures/model06_status_trajectory.svg)
+
+### Chang random-mating benchmark
+
+For Chang's idealized constant-size two-parent model, the large-population benchmarks are
+
+$
+T_{MRCA}\approx\log_2N
+$
+
+and
+
+$
+T_{IAP}\approx1.77\log_2N.
+$
+
+The exact finite simulations approach these only gradually.
+
+![MRCA and IAP scaling](figures/model06_scaling.svg)
+
+These equations are asymptotic results for an idealized random-mating population. They are not historical dates for humanity.
+
+### Population structure
+
+The structured extension interpolates between population-size-proportional panmixia and complete within-community isolation.
+
+![Isolation sensitivity](figures/model06_isolation_sensitivity.svg)
+
+Near-complete isolation can substantially delay MRCA and IAP. At complete persistent isolation, a global MRCA is impossible across disconnected present-day communities.
+
+### Animated backward pedigree
+
+![Animated MRCA-IAP transition](figures/model06_status_animation.svg)
+
+This is genealogical ancestry only. A genealogical common ancestor does not imply that detectable DNA from that ancestor survives in every present-day descendant. Chromosomal inheritance is reserved for Model 07.
+
+Primary references:
+
+- Joseph T. Chang (1999), Recent common ancestors of all present-day individuals, Advances in Applied Probability 31(4), 1002-1026. https://doi.org/10.1239/aap/1029955256
+- Douglas L. T. Rohde, Steve Olson, and Joseph T. Chang (2004), Modelling the recent common ancestry of all living humans, Nature 431, 562-566. https://doi.org/10.1038/nature02842
+
 ## Repository structure
 
 ~~~text
@@ -173,6 +229,7 @@ python scripts/generate_model02_outputs.py
 python scripts/generate_model03_outputs.py
 python scripts/generate_model04_outputs.py
 python scripts/generate_model05_outputs.py
+python scripts/generate_model06_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -182,7 +239,7 @@ python scripts/generate_model05_outputs.py
 3. Time-varying barriers and historically changing connectivity: implemented
 4. Time-varying population size, carrying capacity, bottlenecks, and overlapping ancestry: implemented
 5. Endogamy and assortative mating: implemented
-6. Genealogical MRCA and identical-ancestors behavior
+6. Genealogical MRCA and identical-ancestors behavior: implemented
 7. Chromosomes, recombination, and loss of detectable founder DNA
 8. Historically constrained scenarios
 

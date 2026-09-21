@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#111}.grid{stroke:#ddd}.line{fill:none;stroke-width:3}</style>
+<text x="450" y="30" text-anchor="middle" font-size="22">Backward pedigree transition from partial to universal ancestors</text>
+<line class="grid" x1="80" y1="390.0" x2="835" y2="390.0"/>
+<text x="68" y="395.0" text-anchor="end" font-size="12">0.0</text>
+<line class="grid" x1="80" y1="326.0" x2="835" y2="326.0"/>
+<text x="68" y="331.0" text-anchor="end" font-size="12">0.2</text>
+<line class="grid" x1="80" y1="262.0" x2="835" y2="262.0"/>
+<text x="68" y="267.0" text-anchor="end" font-size="12">0.4</text>
+<line class="grid" x1="80" y1="198.0" x2="835" y2="198.0"/>
+<text x="68" y="203.0" text-anchor="end" font-size="12">0.6</text>
+<line class="grid" x1="80" y1="134.0" x2="835" y2="134.0"/>
+<text x="68" y="139.0" text-anchor="end" font-size="12">0.8</text>
+<line class="grid" x1="80" y1="70.0" x2="835" y2="70.0"/>
+<text x="68" y="75.0" text-anchor="end" font-size="12">1.0</text>
+<rect x="145" y="390.00" width="155" height="0.00" fill="#1f77b4">
+<animate attributeName="y" values="390.00;345.20;340.93;333.47;323.87;317.47;319.60;316.40;322.80;326.00;336.67;333.47;323.87;318.53;322.80;319.60;317.47" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+<animate attributeName="height" values="0.00;44.80;49.07;56.53;66.13;72.53;70.40;73.60;67.20;64.00;53.33;56.53;66.13;71.47;67.20;70.40;72.53" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+</rect>
+<text x="222.5" y="420" text-anchor="middle" font-size="13">No descendants</text>
+<rect x="375" y="70.00" width="155" height="320.00" fill="#ff7f0e">
+<animate attributeName="y" values="70.00;114.80;119.07;126.53;136.13;142.53;140.40;143.60;137.20;142.53;182.00;269.47;342.00;378.27;383.60;387.87;390.00" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+<animate attributeName="height" values="320.00;275.20;270.93;263.47;253.87;247.47;249.60;246.40;252.80;247.47;208.00;120.53;48.00;11.73;6.40;2.13;0.00" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+</rect>
+<text x="452.5" y="420" text-anchor="middle" font-size="13">Partial</text>
+<rect x="605" y="390.00" width="155" height="0.00" fill="#2ca02c">
+<animate attributeName="y" values="390.00;390.00;390.00;390.00;390.00;390.00;390.00;390.00;390.00;381.47;331.33;247.07;184.13;153.20;143.60;142.53;142.53" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+<animate attributeName="height" values="0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;8.53;58.67;142.93;205.87;236.80;246.40;247.47;247.47" dur="10s" repeatCount="indefinite" calcMode="discrete"/>
+</rect>
+<text x="682.5" y="420" text-anchor="middle" font-size="13">Universal</text>
+<text x="450" y="455" text-anchor="middle" font-size="12">One N = 300 stochastic pedigree; animation stops when the IAP is reached.</text>
+</svg>
