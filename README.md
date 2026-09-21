@@ -4,7 +4,7 @@ A reproducible Python project for testing quantitative claims raised in a debate
 
 **Debate source:** [Evolution and Creation debate on YouTube](https://www.youtube.com/watch?v=hsJ-zLVn0H0)
 
-The **Claim from the debate** statements below are concise paraphrases of claims made during the discussion, not verbatim quotations. The **Judgment on the claim** sections distinguish mathematical possibility, model-dependent probability, and historically supported inference.
+The **Claim from the debate** statements below are concise paraphrases, not verbatim quotations. Each model now includes a **Speaker attribution** line based on the transcript. Where a model combines a claim and an objection, or synthesizes several exchanges, that is stated explicitly rather than assigning the synthesized sentence to one speaker. The **Judgment on the claim** sections distinguish mathematical possibility, model-dependent probability, and historically supported inference.
 
 
 The project does **not** assume that a theological or historical claim is true. Each model is framed conditionally:
@@ -13,79 +13,97 @@ The project does **not** assume that a theological or historical claim is true. 
 
 ## Interactive synthesis: continental founder-spread explorer
 
-This is **not Model 16**. It is an interactive synthesis of the genealogy, migration, endogamy, historical-constraint, and admixture models.
+This is **not Model 16**. It is a user-facing synthesis of the genealogy, migration, endogamy, historical-constraint, Tasmania, and admixture models.
 
 [![Open the continental explorer in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/interactive_continental_explorer.ipynb)
 
-The explorer lets the user set:
+### What the user can change
 
-- how many years ago Adam and Eve enter the modeled population;
-- generation interval and founder region;
-- starting population of each macroregion;
-- target population used for the visual growth trajectory;
-- a complete destination × source parental-migration matrix;
-- within-region random-mating / endogamy strength;
-- number of initial joint children of the pair;
-- timing and strength of a late increase in interregional contact;
-- whether the animated map displays descent from **both founders**, **either founder**, or **mean founder-pair autosomal DNA**.
+The explorer now supports:
 
-The engine uses five macrocontinents plus a separate **Middle East** source node so that the proposed origin is not hidden inside a continent-scale Asia compartment.
+- founder date, generation interval, founder region, and number of initial joint children;
+- date-responsive regional population presets, with every population editable;
+- a complete destination × source parental-source matrix;
+- region-specific mixing/endogamy;
+- late-contact timing and migration multiplier;
+- **Tasmania as a separate seventh node** with an explicit hard Australia/Oceania ↔ Tasmania barrier;
+- deterministic or **finite-population Monte Carlo** mode;
+- 25–500 stochastic replicates and reproducible random seed;
+- map color for either-founder genealogy, both-founder genealogy, or mean founder-pair autosomal DNA;
+- built-in scenario presets;
+- **Scenario A vs Scenario B comparison**;
+- automatic diagnosis of the limiting region or hard barrier;
+- JSON export of the exact scenario.
+
+The seven modeled nodes are Middle East, Africa, Europe, Asia, Americas, Australia/Oceania, and Tasmania.
 
 ![Continental explorer preview](figures/continental_explorer_preview.svg)
 
-### Evidence-backed population preset
+### Why Tasmania is separate
 
-The default founder date is 11,000 years ago, approximately 9000 BCE. A historical regional reconstruction gives the following coarse starting values:
+The debate itself treats isolation as a decisive stress test. A continent-scale Oceania node hides that issue.
 
-| Region | Default start population |
-| --- | ---: |
-| Middle East | 241,000 |
-| Africa | 343,000 |
-| Europe | 759,000 |
-| Asia | 1,555,000 |
-| Americas | 415,000 |
-| Oceania | 252,000 |
+The explorer therefore represents Tasmania separately. By default, the Australia/Oceania ↔ Tasmania reproductive edge is a **true zero barrier** until the selected recent-contact release date. A permanent-barrier toggle lets the user see the hard topological result directly: if no reproductive path ever opens, outside founder ancestry cannot enter Tasmania.
 
-The six values total about **3.565 million**. Asia combines the source table's Asia and CIS categories, while the Americas combine its Latin America and North America categories.
+The land-bridge/contact chronology is evidence-constrained; the **post-contact parent-source rate is not**. It remains an editable sensitivity assumption.
 
-These are **not census counts**. Deep-prehistory population estimates are highly uncertain. HYDE 3.2 independently places global population around 4.4 million in 10,000 BCE and reports a very wide uncertainty/scenario range. When auto-population mode is enabled, the notebook log-interpolates among 1000-year regional anchors to match the selected founder date; this interpolation is a visualization/modeling convenience, not additional evidence. Every population field remains editable.
+### Population defaults
 
-### Migration and mixing defaults are deliberately not presented as historical estimates
+The founder default remains 11,000 years ago, approximately 9000 BCE. The continental teaching preset uses the same coarse historical regional series as before.
 
-The explorer's migration control is a **parent-source matrix**: for a child born in destination region (i), entry (M_{ij}) is the fraction of parental draws coming from source region (j).
+Tasmania is treated differently: the repository does not contain a defensible Tasmania-specific population estimate for 11 ka. Its default start population is therefore explicitly marked as a **teaching placeholder**, using 7,465 because that is the middle early-contact population model stored in Model 10. It must not be interpreted as a 9000 BCE estimate.
 
-There is no defensible single six-region, per-generation Holocene migration matrix that can simply be read from the literature. Therefore the supplied matrix and within-region mixing values are explicitly labeled **teaching sensitivity assumptions**.
+When auto-population mode is enabled, continental start populations change with the selected founder date by log-interpolating the stored 1000-year anchors. This is a visualization/modeling convenience, not additional archaeological evidence.
 
-Users can set them to zero, increase them, impose strong endogamy, or make interregional reproduction much more common and immediately see how the conclusion changes.
+### Deterministic versus Monte Carlo
 
-### What the default teaching scenario does
+Deterministic mode shows expected pedigree-state fractions.
 
-With the supplied illustrative migration/mixing settings, the deterministic model eventually makes all six macroregions descendants of both founders. The global both-founder fraction crosses about **99% by generation 56**, roughly 1,570 years after the proposed insertion.
+Monte Carlo mode samples finite regional populations each generation, so the user can see:
 
-That number is **not a historical estimate**. It is useful precisely because the user can now reduce migration, increase endogamy, alter population sizes, or change the founder date and observe whether the result survives.
+- early founder-lineage extinction;
+- stochastic variation after rare reproductive migration;
+- 5th–95th percentile uncertainty bands;
+- probability all seven regions exceed 50%, 90%, or 99% both-founder descent;
+- probability the founder lineage disappears.
 
-At the same time, the modeled present-day mean founder-pair autosomal contribution remains tiny even when genealogy becomes universal. This visually reinforces the distinction established in Models 07, 08, and 11.
+These are **conditional probabilities under the selected parameters**, not posterior probabilities that the historical scenario occurred.
+
+### Better visual explanation
+
+The redesigned notebook uses a coordinated dashboard:
+
+1. animated world map with population-scaled nodes;
+2. regional both-founder trajectories;
+3. global deterministic trajectory plus Monte Carlo 5–95% band;
+4. present regional genealogy versus mean founder DNA;
+5. regional population trajectories on a log scale;
+6. parental-source heatmap;
+7. A/B scenario comparison.
+
+The automatic diagnosis also reports the limiting region, identifies regions with no reproductive path, and states which region crosses the selected universal-ancestry threshold last.
+
+### Reproducibility
+
+The current scenario can be exported as JSON. This makes statements such as “this parameterization reaches universal ancestry” independently rerunnable rather than dependent on screenshots or prose.
 
 ### Interpretation
 
-A successful animation means:
+A successful run means only:
 
-> Under these user-selected population, migration, timing, and mating assumptions, universal founder genealogy is compatible with the model.
+> Under these selected population, migration, mating, barrier, and timing assumptions, universal founder genealogy is compatible with the model.
 
-It does **not** mean:
+It does **not** mean those parameter values occurred historically.
 
-> Those parameter values occurred historically, therefore Adam and Eve existed.
+The explorer is intentionally designed so users can lower migration, strengthen endogamy, permanently isolate Tasmania, change founder timing, or compare two scenarios and see exactly which assumption changes the conclusion.
 
-The explorer is intended to make the assumptions visible and falsifiable rather than bury them inside prose.
-
-Population references:
-
-- Historical regional population table used for the separate Middle East 9000 BCE preset: https://www.statista.com/statistics/1006557/global-population-per-continent-10000bce-2000ce/
-- Klein Goldewijk et al. (2017), HYDE 3.2, *Earth System Science Data* 9:927-953, DOI 10.5194/essd-9-927-2017.
+Population and Tasmania constraints are documented in [the explorer documentation](docs/interactive_continental_explorer.md).
 
 ## Model 01: spread of a genealogical founder
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar advances the one-migrant/genealogical-spread argument; Dr. Vahdati-Nasab challenges how a tiny lineage could catch a much larger population.
 
 A single person entering a much larger population can, through ordinary intermarriage, eventually become a genealogical ancestor of essentially everyone; the founder lineage should not be treated as a permanently separate clan competing numerically with the rest of the population.
 
@@ -117,6 +135,8 @@ The important qualification is early stochastic extinction: a founder can leave 
 ## Model 02: structured populations and migration
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar argues that even very small nonzero migration can carry the lineage into Australia or the Americas.
 
 Even when human populations are geographically structured, rare migration can carry a founder lineage into distant populations; therefore a very small but nonzero migration rate may be enough for ancestry to spread widely.
 
@@ -163,6 +183,8 @@ The phrase "the migration rate was nonzero" is therefore scientifically incomple
 
 ### Claim from the debate
 
+**Speaker attribution:** Exchange between both speakers. Dr. Vahdati-Nasab raises long isolation as an objection; Mr. Kamkar responds that barrier timing and whether ancestry crossed before or after isolation are what matter.
+
 Historical isolation does not automatically rule out shared genealogy. What matters is whether founder ancestry crossed into a population before a barrier closed, or whether later contact reopened a reproductive path.
 
 
@@ -207,6 +229,8 @@ In this run, the barrier closes at generation 20. Founder ancestry has already e
 ## Model 04: population growth, carrying capacity, and overlapping ancestry
 
 ### Claim from the debate
+
+**Speaker attribution:** Exchange between both speakers. Dr. Vahdati-Nasab raises the competing-exponential-populations objection; Mr. Kamkar responds that intermarriage means the non-founder population must remain 'pure' to stay outside the founder genealogy.
 
 The objection that "one founder lineage can never catch a much larger native population because both groups reproduce exponentially" is misleading once intermarriage occurs: descendants of the founder and descendants of the original population become overlapping sets.
 
@@ -255,6 +279,8 @@ The notebook also lets you introduce logistic carrying capacity, temporary bottl
 
 ### Claim from the debate
 
+**Speaker attribution:** Dr. Vahdati-Nasab raises isolated/endogamous populations as a serious objection; Mr. Kamkar explicitly acknowledges Tasmania and the Samaritans as cases requiring the simple model to be revised.
+
 Highly endogamous or historically isolated communities, such as the examples raised in the debate, may be important counterexamples to a recent universal genealogical-ancestor claim because reproductive isolation can prevent an outside lineage from entering.
 
 
@@ -291,6 +317,8 @@ The model distinguishes **perfect isolation** from **rare bridging marriages**. 
 ## Model 06: genealogical MRCA and the Identical Ancestors Point
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar introduces the recent genealogical MRCA and Identical Ancestors Point argument, citing the Douglas Rohde modeling; Dr. Vahdati-Nasab disputes its applicability to real human population history.
 
 Genealogical common ancestry can be dramatically more recent than genetic coalescence. A most recent genealogical common ancestor, and later an Identical Ancestors Point, can occur only thousands of years in the past even though genetic lineages trace much deeper.
 
@@ -360,6 +388,8 @@ However, applying an ideal panmictic result directly to all humans ignores migra
 ## Model 07: genealogical ancestry versus autosomal genetic ancestry
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar argues that genealogical descent can persist after a particular ancestor contributes no genetic material to a distant descendant; Dr. Vahdati-Nasab challenges his simplified genetic explanation.
 
 A person can be a genuine genealogical ancestor while leaving no identifiable autosomal DNA in a particular distant descendant. Therefore absence of detectable DNA from a proposed ancestor is not, by itself, proof that the genealogical relationship did not exist.
 
@@ -436,6 +466,8 @@ This directly supports the claim that genealogical ancestry and detectable genet
 
 ### Claim from the debate
 
+**Speaker attribution:** Primarily a synthesis of Mr. Kamkar's genealogy-versus-genetics argument. The integrated pedigree-plus-recombination formulation is the repository's model, not a verbatim standalone claim from one speaker.
+
 A founder pair could become genealogical ancestors of an entire population while their autosomal genetic contribution becomes absent in some descendants or too fragmented to be detectable, so genealogical universality does not require genetic universality.
 
 
@@ -500,6 +532,8 @@ So universal genealogy can coexist with heterogeneous or absent autosomal founde
 ## Model 09: historically constrained founder scenarios
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar advances the ~11 ka Adam/Eve plus later-migration scenario. Dr. Vahdati-Nasab raises Australia, the Americas, Tasmania, and absence of expected genetic evidence as objections.
 
 If an Adam-and-Eve founder pair appeared roughly 11,000 years ago in West Asia, later migration and intermarriage could in principle spread their genealogy into already established populations in Australia and the Americas; Tasmania is a special hard-isolation case that must be handled separately.
 
@@ -593,6 +627,8 @@ These are toy-model sensitivities, not estimates of Tasmanian history. The impor
 ## Model 10: evidence-calibrated uncertainty envelopes
 
 ### Claim from the debate
+
+**Speaker attribution:** Repository synthesis rather than a sentence stated by one speaker: it combines Mr. Kamkar's ~11 ka compatibility claim with Dr. Vahdati-Nasab's archaeological, isolation, and genetic objections.
 
 After archaeological, demographic, and genetic constraints are included, an approximately 11 ka founder pair could still be compatible with universal present-day genealogical ancestry, provided enough later reproductive mixing occurred across the populations that were already established or isolated.
 
@@ -690,6 +726,8 @@ Those are required-rate thresholds under deliberately favorable assumptions, **n
 
 ### Claim from the debate
 
+**Speaker attribution:** Both speakers. Dr. Vahdati-Nasab points to the absence of a detectable migration/admixture signal as an objection; Mr. Kamkar replies that genealogical ancestry and genetic ancestry are different quantities.
+
 Low or absent detectable European genetic admixture in an Indigenous population was raised as an objection to outside genealogical ancestry. The counterclaim is that **genetic ancestry and genealogical ancestry are not the same quantity**: a source lineage can spread through pedigrees even while its mean DNA contribution remains small.
 
 [![Open Model 11 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/11_admixture_genealogy.ipynb)
@@ -723,6 +761,8 @@ Primary references:
 ## Model 12: domestication versus biological appearance
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar connects the Qur'anic 'eight pairs' and the proposed Adam date to the apparent timing of livestock; Dr. Vahdati-Nasab replies that the relevant Neolithic transition is domestication, not the biological appearance of those lineages.
 
 The debate connects the Qur'anic **"eight pairs"** of livestock with the proposed Adam period and treats the roughly Neolithic timing of several domestic animals as potentially supportive of a special-creation scenario.
 
@@ -758,6 +798,8 @@ Primary references:
 
 ### Claim from the debate
 
+**Speaker attribution:** Mr. Kamkar advances a special-creation scenario in which Adam and Eve enter an already existing human population. Dr. Vahdati-Nasab raises the genetic question of how independently inserted humans would match the pre-existing human genetic lineage.
+
 The special-creation scenario is partly defended as **genetically non-excludable**: a pair could appear within an existing human population around 11 ka, interbreed, and later become genealogical ancestors without modern genetics necessarily recovering an obvious "Adam and Eve" signature.
 
 [![Open Model 13 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/13_inserted_pair_detectability.ipynb)
@@ -787,6 +829,8 @@ With an illustrative 1% per-marker probability of surviving and being sampled, t
 ## Model 14: agency inference from artifacts versus cosmic fine-tuning
 
 ### Claim from the debate
+
+**Speaker attribution:** Mr. Kamkar explicitly makes the analogy from archaeologists recognizing intentional stone-tool patterning to an agency inference from cosmic order and fine-tuning.
 
 The debate argues that patterned stone tools justify an inference to **agency**, and then extends that reasoning to cosmic order, regularity, and fine-tuning: if archaeologists reject a random natural origin for carefully modified stones, analogous patterns in the universe may support a cosmic agency inference.
 
@@ -830,6 +874,8 @@ Primary references:
 ## Model 15: evolution of cooperation, punishment, conformity, and moral norms
 
 ### Claims from the debate
+
+**Speaker attribution:** Two claims from different parts of the exchange. Dr. Vahdati-Nasab advances the descriptive evolutionary/conformity account, including the approximate '90% middle' illustration; Mr. Kamkar raises and endorses the objection that group acceptance cannot by itself define moral truth.
 
 The morality discussion contains two separable claims.
 
