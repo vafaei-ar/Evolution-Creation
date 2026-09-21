@@ -55,6 +55,7 @@ from .genealogy import (
 from .historical_constraints import (
     DeterministicHistoricalResult,
     HistoricalGenealogyResult,
+    HistoricalPedigreeGenomeResult,
     HistoricalScenario,
     LateContactSummary,
     apply_region_bottleneck,
@@ -63,6 +64,7 @@ from .historical_constraints import (
     earliest_reachable_generations,
     make_debate_historical_scenario,
     simulate_historical_genealogy,
+    simulate_historical_pedigree_genome,
     simulate_late_contact_sensitivity,
     years_to_generations,
 )
@@ -102,6 +104,7 @@ __all__ = [
     "GeneticPathResult",
     "GeneticSegmentHistory",
     "HistoricalGenealogyResult",
+    "HistoricalPedigreeGenomeResult",
     "HistoricalScenario",
     "LateContactSummary",
     "OverlapSpreadResult",
@@ -144,6 +147,7 @@ __all__ = [
     "simulate_endogamy_replicates",
     "simulate_founder_spread",
     "simulate_historical_genealogy",
+    "simulate_historical_pedigree_genome",
     "simulate_late_contact_sensitivity",
     "simulate_overlapping_ancestry_sets",
     "simulate_path_replicates",
