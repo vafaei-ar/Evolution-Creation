@@ -1,0 +1,111 @@
+{
+  "source": "The debate transcript provided in The debate.docx; debate video: https://www.youtube.com/watch?v=hsJ-zLVn0H0",
+  "note": "Claims are paraphrases. Attribution identifies who advances the underlying claim/objection in the transcript. 'Synthesis' means the repository combines multiple exchanges rather than quoting a single speaker.",
+  "models": [
+    {
+      "model": 1,
+      "attribution": "Mr. Kamkar",
+      "role": "claim, with Dr. Vahdati-Nasab objection",
+      "confidence": "high",
+      "basis": "one migrant enters a much larger tribe; intermarriage spreads genealogy"
+    },
+    {
+      "model": 2,
+      "attribution": "Mr. Kamkar",
+      "role": "claim",
+      "confidence": "high",
+      "basis": "very small nonzero migration into Australia/Americas can carry the lineage"
+    },
+    {
+      "model": 3,
+      "attribution": "Both speakers",
+      "role": "exchange",
+      "confidence": "high",
+      "basis": "Vahdati-Nasab raises isolation; Kamkar emphasizes whether ancestry crossed before/after barrier timing"
+    },
+    {
+      "model": 4,
+      "attribution": "Both speakers",
+      "role": "exchange",
+      "confidence": "high",
+      "basis": "Vahdati-Nasab raises competing exponential populations; Kamkar responds that the non-founder set must remain pure and invokes limiting factors"
+    },
+    {
+      "model": 5,
+      "attribution": "Dr. Vahdati-Nasab and Mr. Kamkar",
+      "role": "objection acknowledged by proponent",
+      "confidence": "high",
+      "basis": "Tasmania and Samaritans/endogamy are raised as cases that break simple panmixia"
+    },
+    {
+      "model": 6,
+      "attribution": "Mr. Kamkar",
+      "role": "claim, disputed by Dr. Vahdati-Nasab",
+      "confidence": "high",
+      "basis": "Rohde-style genealogical MRCA and Identical Ancestors Point"
+    },
+    {
+      "model": 7,
+      "attribution": "Mr. Kamkar",
+      "role": "claim, disputed by Dr. Vahdati-Nasab",
+      "confidence": "high",
+      "basis": "genealogical ancestor can remain in pedigree after a particular genetic contribution is lost"
+    },
+    {
+      "model": 8,
+      "attribution": "Repository synthesis of Mr. Kamkar's distinction",
+      "role": "synthesis",
+      "confidence": "high",
+      "basis": "joint pedigree plus recombination model integrates the genealogy-vs-genetics argument"
+    },
+    {
+      "model": 9,
+      "attribution": "Mr. Kamkar with Dr. Vahdati-Nasab objections",
+      "role": "claim plus objections",
+      "confidence": "high",
+      "basis": "~11 ka Adam/Eve in West Asia plus migration; Australia/Americas/Tasmania used as tests"
+    },
+    {
+      "model": 10,
+      "attribution": "Repository synthesis of both speakers",
+      "role": "synthesis",
+      "confidence": "high",
+      "basis": "Kamkar's compatibility claim evaluated against Vahdati-Nasab's isolation/genetic/archaeological constraints"
+    },
+    {
+      "model": 11,
+      "attribution": "Both speakers",
+      "role": "exchange",
+      "confidence": "high",
+      "basis": "Vahdati-Nasab invokes absent genetic migration signal; Kamkar distinguishes genealogical from genetic ancestry"
+    },
+    {
+      "model": 12,
+      "attribution": "Mr. Kamkar claim; Dr. Vahdati-Nasab response",
+      "role": "claim and rebuttal",
+      "confidence": "high",
+      "basis": "eight pairs / ~11 ka animal appearance versus domestication-from-older-lineages distinction"
+    },
+    {
+      "model": 13,
+      "attribution": "Mr. Kamkar scenario; Dr. Vahdati-Nasab genetic objection",
+      "role": "claim and objection",
+      "confidence": "medium-high",
+      "basis": "special insertion into an existing human population; question of matching inherited human genetic markers"
+    },
+    {
+      "model": 14,
+      "attribution": "Mr. Kamkar",
+      "role": "claim",
+      "confidence": "high",
+      "basis": "explicit analogy from intentional stone-tool patterning to agency inference from cosmic fine-tuning"
+    },
+    {
+      "model": 15,
+      "attribution": "Dr. Vahdati-Nasab descriptive claim; Mr. Kamkar normative objection",
+      "role": "two claims",
+      "confidence": "high",
+      "basis": "~90% adaptive/conformist middle illustration and objection that group acceptance cannot define moral truth"
+    }
+  ]
+}
