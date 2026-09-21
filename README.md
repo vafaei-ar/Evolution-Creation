@@ -11,6 +11,8 @@ The project does **not** assume that a theological or historical claim is true. 
 
 > Given a stated set of assumptions, what follows mathematically or computationally?
 
+![Debate claims mapped to models](figures/debate_claim_map.svg)
+
 ## Interactive synthesis: continental founder-spread explorer
 
 This is **not Model 16**. It is a user-facing synthesis of the genealogy, migration, endogamy, historical-constraint, Tasmania, and admixture models.
