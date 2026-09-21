@@ -126,6 +126,32 @@ Once intermarriage occurs, "founder descendants" and "background descendants" ar
 
 The notebook also lets you introduce logistic carrying capacity, temporary bottlenecks, and a relative reproductive-weight sensitivity parameter. These are conceptual experiments, not estimates of prehistoric demography.
 
+## Model 05: endogamy and assortative mating
+
+Model 05 replaces purely geographic barriers with persistent **social mating structure**.
+
+[![Open Model 05 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/05_endogamy_assortative_mating.ipynb)
+
+An endogamy strength of 0 means mate communities are sampled according to population size, while 1 means perfect within-community mating. Perfect endogamy is therefore a true reproductive barrier even if communities are geographically adjacent.
+
+### Endogamy slows cross-community spread
+
+![Endogamy trajectories](figures/model05_endogamy_trajectories.svg)
+
+As endogamy approaches 1, the time required for founder ancestry to penetrate other communities can become much longer. At exactly 1, other communities are unreachable.
+
+### Endogamy plus assortative mating
+
+![Endogamy and assortment sensitivity](figures/model05_endogamy_assortment_heatmap.svg)
+
+The vertical axis is an abstract same-state mate-choice weight. It is included as a sensitivity analysis only. Deep genealogical ancestry itself is not assumed to be observable.
+
+### Animated high-endogamy example
+
+![Endogamy animation](figures/model05_endogamy_animation.svg)
+
+The model distinguishes **perfect isolation** from **rare bridging marriages**. A single cross-community genealogical bridge can seed ancestry inside an otherwise highly endogamous community, after which within-community reproduction can propagate it.
+
 ## Repository structure
 
 ~~~text
@@ -146,6 +172,7 @@ python scripts/generate_figures.py
 python scripts/generate_model02_outputs.py
 python scripts/generate_model03_outputs.py
 python scripts/generate_model04_outputs.py
+python scripts/generate_model05_outputs.py
 ~~~
 
 ## Modeling roadmap
@@ -154,7 +181,7 @@ python scripts/generate_model04_outputs.py
 2. Multiple demes, migration, and fixed barriers: implemented
 3. Time-varying barriers and historically changing connectivity: implemented
 4. Time-varying population size, carrying capacity, bottlenecks, and overlapping ancestry: implemented
-5. Endogamy and assortative mating
+5. Endogamy and assortative mating: implemented
 6. Genealogical MRCA and identical-ancestors behavior
 7. Chromosomes, recombination, and loss of detectable founder DNA
 8. Historically constrained scenarios
