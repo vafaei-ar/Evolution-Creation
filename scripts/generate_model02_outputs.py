@@ -35,7 +35,11 @@ def _line_svg(result) -> str:
     for d in range(result.fractions_by_deme.shape[1]):
         ys = top + plot_h * (1 - result.fractions_by_deme[:, d])
         points = " ".join(f"{x:.1f},{y:.1f}" for x, y in zip(xs, ys))
-        parts.append(f'<polyline class="line" stroke="{palette[d]}" points="{points}"/>')
+        parts += [
+            f'<polyline class="line" stroke="{palette[d]}" points="{points}"/>',
+            f'<line x1="650" y1="{85 + 22 * d}" x2="680" y2="{85 + 22 * d}" stroke="{palette[d]}" stroke-width="3"/>',
+            f'<text x="690" y="{90 + 22 * d}" font-size="13">Deme {d + 1}</text>',
+        ]
     parts += [
         f'<line x1="{left}" y1="{top + plot_h}" x2="{left + plot_w}" y2="{top + plot_h}" stroke="#222"/>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_h}" stroke="#222"/>',
