@@ -8,52 +8,63 @@ The project does **not** assume that a theological or historical claim is true. 
 
 ## Model 01: spread of a genealogical founder
 
-The first model addresses a narrow question from the debate:
+The baseline asks:
 
-> If one individual enters a finite population and reproduces within it, how does that individual's genealogical ancestry spread through later generations?
+> If one individual enters a finite, completely mixed population and reproduces within it, how does that individual's genealogical ancestry spread through later generations?
 
-The baseline model deliberately assumes:
+It assumes fixed population size, non-overlapping generations, two parents per child, random mating, no geography, no migration, no selection, and no genetics.
 
-- fixed population size,
-- discrete non-overlapping generations,
-- two parents per child,
-- random mating,
-- no geography,
-- no migration,
-- no selection,
-- no genetics or recombination.
+[![Open Model 01 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/01_founder_spread.ipynb)
 
-These assumptions are intentionally unrealistic. They create a transparent baseline that we can progressively relax.
+Under the infinite-population deterministic approximation:
 
-### Interactive notebook
+$$
+f_{t+1}=1-(1-f_t)^2.
+$$
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/01_founder_spread.ipynb)
+The stochastic simulation samples parents explicitly, so rare founder lineages can disappear by chance.
 
-The notebook lets you change population size, number of founders, number of generations, number of stochastic replicates, and random seed.
+## Model 02: structured populations and migration
 
-### Core quantity
+Model 02 removes the strongest unrealistic assumption from Model 01: complete mixing.
 
-For generation t:
+The population is divided into demes. For a child born in deme $i$, the migration matrix entry $M_{ij}$ is the probability that a parent is sampled from source deme $j$. This is an abstraction of parental-source mixing or gene flow.
 
-f_t = (number of people descended from the tagged founder(s)) / N.
+[![Open Model 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vafaei-ar/Evolution-Creation/blob/main/notebooks/02_structured_migration.ipynb)
 
-A person counts as a genealogical descendant if at least one parent is already a genealogical descendant.
+### Example trajectory
 
-Under an infinite-population deterministic approximation with random mating:
+The figure below uses five equal demes in a line, one founder population at the left edge, and a total nearest-neighbor migration rate of 0.02 per parental draw.
 
-f_(t+1) = 1 - (1 - f_t)^2.
+![Founder ancestry across connected demes](figures/model02_deme_spread.svg)
 
-The simulation does not force this recurrence. It samples parents explicitly, so founder lineages can disappear by chance, especially in early generations.
+The parameter values above are illustrative. They are **not** estimates of ancient human migration.
+
+### Sensitivity to migration and elapsed time
+
+The next figure estimates the probability that founder ancestry has fixed in all four demes by the stated generation. It uses 30 stochastic replicates per cell.
+
+![Migration sensitivity heatmap](figures/model02_fixation_heatmap.svg)
+
+At migration rate zero, the founder lineage cannot cross between demes. With nonzero connectivity, elapsed time and migration rate jointly control whether the lineage spreads through the entire system.
+
+### Animated ancestry front
+
+The generated SVG below animates one stochastic run across seven demes.
+
+![Animated ancestry spread](figures/model02_spread_animation.svg)
+
+Model 02 also has a hard-barrier control. A permanent barrier makes the migration matrix block-disconnected. If the founder starts on one side, ancestry cannot reach the other side regardless of how many generations pass.
 
 ## Repository structure
 
 ~~~text
 src/evolution_creation/   reusable model code
 notebooks/                interactive Colab notebooks
-scripts/                  reproducible figure-generation scripts
+scripts/                  reproducible output-generation scripts
 tests/                    unit tests
 docs/                     assumptions and interpretation
-figures/                  generated outputs
+figures/                  generated outputs shown in this README
 ~~~
 
 ## Run locally
@@ -62,14 +73,15 @@ figures/                  generated outputs
 python -m pip install -e ".[dev]"
 pytest
 python scripts/generate_figures.py
+python scripts/generate_model02_outputs.py
 ~~~
 
 ## Modeling roadmap
 
-1. Founder ancestry in a single panmictic population
-2. Multiple demes and migration
-3. Geographic barriers and complete isolation
-4. Time-varying migration and population size
+1. Founder ancestry in a single panmictic population: implemented
+2. Multiple demes, migration, and fixed barriers: implemented
+3. Time-varying barriers and historically changing connectivity
+4. Time-varying population size and carrying capacity
 5. Endogamy and assortative mating
 6. Genealogical MRCA and identical-ancestors behavior
 7. Chromosomes, recombination, and loss of detectable founder DNA
